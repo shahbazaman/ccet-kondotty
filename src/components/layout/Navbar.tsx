@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FiMenu, FiX, FiPhone, FiMail } from "react-icons/fi";
+import { FiMenu, FiX, FiPhone, FiMail, FiChevronDown } from "react-icons/fi";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -19,12 +19,25 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -81,6 +94,35 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Admin/Careers Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="px-3 py-2 text-sm font-medium rounded-md transition-all duration-150 text-gray-700 hover:text-primary hover:bg-blue-50 flex items-center gap-1"
+                >
+                  More <FiChevronDown className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
+                </button>
+                {dropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                    <Link
+                      href="/careers"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-primary transition-colors"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Careers
+                    </Link>
+                    <Link
+                      href="/admin/login"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-primary transition-colors"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Admin Login
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               <Link href="/admissions" className="ml-3 btn-primary text-sm py-2! px-4!">
                 Apply Now
               </Link>
@@ -113,6 +155,20 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/careers"
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+              >
+                Careers
+              </Link>
+              <Link
+                href="/admin/login"
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+              >
+                Admin Login
+              </Link>
               <Link
                 href="/admissions"
                 onClick={() => setIsOpen(false)}

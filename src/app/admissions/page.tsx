@@ -1,10 +1,12 @@
 "use client";
 import Link from "next/link";
-import { FiCheckCircle, FiAlertCircle, FiArrowDown, FiDownload } from "react-icons/fi";
+import { FiCheckCircle, FiAlertCircle, FiArrowDown, FiExternalLink } from "react-icons/fi";
 import SectionHeading from "@/components/ui/SectionHeading";
 import InquiryForm from "@/components/admissions/InquiryForm";
 import Animate from "@/components/ui/Animate";
 import { useEffect, useState } from "react";
+
+const MGMT_FORM_LINK = "https://form.svhrt.com/6a16a958682986fcc0d14779";
 
 const steps = [
   {
@@ -46,7 +48,7 @@ const steps = [
   {
     step: "04",
     title: "Fee Payment & Enrolment",
-    desc: "Selected students pay fees as per University of Calicut norms. Management Quota students may apply directly at the college office.",
+    desc: "Selected students pay fees as per University of Calicut norms. Management Quota students may apply directly using the form above.",
   },
 ];
 
@@ -64,7 +66,7 @@ const documents = [
 ];
 
 const managementQuotaDocs = [
-  "Application Form (available at college office)",
+  "Application Form (fill online using the button above)",
   "Copy of Plus Two Certificate",
   "Transfer Certificate",
   "Conduct Certificate",
@@ -80,6 +82,7 @@ export default function AdmissionsPage() {
       .then(data => setCalendar(data))
       .catch(console.error);
   }, []);
+
   return (
     <>
       {/* Hero */}
@@ -88,24 +91,62 @@ export default function AdmissionsPage() {
           <Animate animation="fade-up">
             <span className="inline-block bg-accent text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Admissions 2026–2027</span>
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Join CCET Kondotty</h1>
-            <p className="text-blue-200 text-lg">Management Quota admissions are now open. Limited seats available. Begin your journey towards a rewarding career.</p>
+            <p className="text-blue-200 text-lg">Admissions are now open. Limited seats available. Begin your journey towards a rewarding career.</p>
           </Animate>
         </div>
       </section>
 
-      {/* Admission Type Banner */}
+      {/* ── MANAGEMENT QUOTA HIGHLIGHT ── */}
+      <section className="bg-gradient-to-r from-[#8B0000] to-[#c0392b] text-white py-10 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <Animate animation="fade-up">
+            <span className="inline-block bg-yellow-400 text-[#8B0000] text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+              🔥 Priority — Limited Seats
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3">
+              Management Quota Admissions Open!
+            </h2>
+            <p className="text-red-100 text-lg mb-6 max-w-2xl mx-auto">
+              Apply directly for a Management Seat in B.Sc AI, Nutrition & Dietetics, or Hotel Management. Fill the official online application form now — seats fill up fast!
+            </p>
+            <a
+              href={MGMT_FORM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-yellow-400 text-[#8B0000] font-black text-base px-8 py-4 rounded-xl hover:bg-yellow-300 transition-colors shadow-lg"
+            >
+              <FiExternalLink size={20} />
+              FOUR YEAR UG PROGRAMME (FYUGP) — Apply for Management Seat
+            </a>
+            <p className="text-red-200 text-xs mt-4">
+              Form link: form.svhrt.com · Direct online application · No college visit required to apply
+            </p>
+          </Animate>
+        </div>
+      </section>
+
+      {/* Admission Type Cards */}
       <section className="bg-white section-padding py-10">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <Animate animation="slide-left">
-            <div className="border-l-4 border-primary bg-blue-50 rounded-2xl p-6">
-              <h3 className="font-heading font-bold text-primary text-lg mb-2">🎓 University Merit Seat</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Admissions conducted through the Centralised Admission Process (CAP) of the University of Calicut. Register at <strong>www.uoc.ac.in</strong>. Selection based on merit as per university norms.</p>
+            <div className="border-2 border-[#8B0000] bg-red-50 rounded-2xl p-6 relative">
+              <span className="absolute -top-3 left-4 bg-[#8B0000] text-white text-xs font-bold px-3 py-1 rounded-full">PRIORITY</span>
+              <h3 className="font-heading font-bold text-[#8B0000] text-lg mb-2">🏢 Management Quota</h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">Apply directly to CCET. Limited seats. Fill the online form — selection based on eligibility and interview. Fast and simple process.</p>
+              <a
+                href={MGMT_FORM_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#8B0000] text-white font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-red-900 transition-colors"
+              >
+                <FiExternalLink size={14} /> Apply Online Now
+              </a>
             </div>
           </Animate>
           <Animate animation="slide-right">
-            <div className="border-l-4 border-accent bg-orange-50 rounded-2xl p-6">
-              <h3 className="font-heading font-bold text-accent text-lg mb-2">🏢 Management Quota</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">Limited seats available. Apply directly at the college office. Final admission granted based on eligibility and interview. Contact us for availability.</p>
+            <div className="border-l-4 border-primary bg-blue-50 rounded-2xl p-6">
+              <h3 className="font-heading font-bold text-primary text-lg mb-2">🎓 University Merit Seat</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Admissions conducted through the Centralised Admission Process (CAP) of the University of Calicut. Register at <strong>www.uoc.ac.in</strong>. Selection based on merit as per university norms.</p>
             </div>
           </Animate>
         </div>
@@ -131,13 +172,6 @@ export default function AdmissionsPage() {
               </Animate>
             ))}
           </div>
-          <Animate animation="fade-up" delay={300}>
-            <div className="flex justify-center mt-8">
-              <Link href="https://admission.uoc.ac.in" target="_blank" rel="noopener noreferrer">
-                <button className="btn-primary">Apply Now</button>
-              </Link>
-            </div>
-          </Animate>
         </div>
       </section>
 
@@ -158,17 +192,17 @@ export default function AdmissionsPage() {
                 career: "AI Engineer, Data Scientist, ML Developer, Software Analyst",
               },
               {
-                title: "B.Sc Nutrition and Dietetics",
+                title: "B.Sc Home Science – Nutrition & Dietetics",
                 color: "border-green-400",
-                eligibility: "Plus Two (Science) with Biology / Chemistry / Home Science or related subjects. Minimum 45% aggregate recommended.",
+                eligibility: "B.Sc Degree with Home Science / Nutrition & Dietetics / related degree. Minimum 50% aggregate. OBC/OEC: 5% relaxation. SC/ST: pass only.",
                 duration: "4 Years (8 Semesters) — FYUGP",
                 icon: "🥗",
                 career: "Dietitian, Clinical Nutritionist, Public Health Nutritionist, Food Analyst",
               },
               {
-                title: "B.Sc Hotel Management & Catering Science",
+                title: "B.Sc Hotel Management & Catering Science Honours",
                 color: "border-amber-400",
-                eligibility: "Plus Two in any stream (Science, Commerce, or Humanities). No specific subject requirement.",
+                eligibility: "Plus Two (any stream) with minimum 50%. OBC/OEC: 5% relaxation. SC/ST: pass only.",
                 duration: "4 Years (8 Semesters) — FYUGP",
                 icon: "🏨",
                 career: "Hotel Manager, Chef, Food & Beverage Manager, Hospitality Consultant",
@@ -188,26 +222,26 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
-      {/* Academic Calendar Highlight */}
-<section className="bg-gray-50 section-padding">
-  <div className="max-w-5xl mx-auto">
-    <Animate animation="fade-up">
-      <SectionHeading badge="Academic Calendar" title="2026–2027 Key Dates" subtitle="Important academic events for the upcoming year (subject to University of Calicut notifications)." />
-    </Animate>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-      {calendar.length > 0 ? calendar.map((item: any, i: number) => (
-        <Animate key={item._id} animation="fade-up" delay={i * 60}>
-          <div className="bg-white rounded-xl border border-gray-100 p-4 text-center shadow-sm">
-            <p className="text-accent font-bold text-xs mb-1">{item.month}</p>
-            <p className="text-gray-700 text-xs leading-snug">{item.event}</p>
+      {/* Academic Calendar */}
+      <section className="bg-gray-50 section-padding">
+        <div className="max-w-5xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionHeading badge="Academic Calendar" title="2026–2027 Key Dates" subtitle="Important academic events for the upcoming year (subject to University of Calicut notifications)." />
+          </Animate>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {calendar.length > 0 ? calendar.map((item: any, i: number) => (
+              <Animate key={item._id} animation="fade-up" delay={i * 60}>
+                <div className="bg-white rounded-xl border border-gray-100 p-4 text-center shadow-sm">
+                  <p className="text-accent font-bold text-xs mb-1">{item.month}</p>
+                  <p className="text-gray-700 text-xs leading-snug">{item.event}</p>
+                </div>
+              </Animate>
+            )) : (
+              <p className="text-gray-400 col-span-4 text-center py-8">Loading calendar...</p>
+            )}
           </div>
-        </Animate>
-      )) : (
-        <p className="text-gray-400 col-span-4 text-center py-8">Loading calendar...</p>
-      )}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Documents Required */}
       <section id="documents-required" className="bg-white section-padding scroll-mt-20">
@@ -224,15 +258,23 @@ export default function AdmissionsPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm font-semibold text-accent mb-3">For Management Quota (Direct):</p>
-                <ul className="space-y-2 mb-6">
+                <p className="text-sm font-semibold text-[#8B0000] mb-3">For Management Quota (Direct):</p>
+                <ul className="space-y-2 mb-4">
                   {managementQuotaDocs.map(d => (
                     <li key={d} className="flex items-start gap-3 text-sm text-gray-700">
                       <FiCheckCircle className="text-orange-400 mt-0.5 shrink-0" /> {d}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl flex gap-3">
+                <a
+                  href={MGMT_FORM_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#8B0000] text-white font-bold text-sm px-5 py-3 rounded-xl hover:bg-red-900 transition-colors mb-4"
+                >
+                  <FiExternalLink size={14} /> Fill Management Quota Form Online
+                </a>
+                <div className="mt-2 p-4 bg-amber-50 border border-amber-200 rounded-xl flex gap-3">
                   <FiAlertCircle className="text-amber-500 shrink-0 mt-0.5" />
                   <p className="text-sm text-amber-700">Please bring both originals and self-attested photocopies of all documents at the time of submission. Incomplete applications will not be processed.</p>
                 </div>

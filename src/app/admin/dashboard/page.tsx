@@ -3,12 +3,11 @@ import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
-import { 
-  FiLogOut, FiImage, FiFileText, FiUsers, FiClock, 
-  FiMapPin, FiBriefcase, FiSettings, FiCalendar 
+import {
+  FiLogOut, FiImage, FiFileText, FiUsers, FiClock,
+  FiMapPin, FiBriefcase, FiSettings, FiCalendar, FiRadio
 } from "react-icons/fi";
 
-// Import manager components
 import GalleryManager from "./components/GalleryManager";
 import NewsManager from "./components/NewsManager";
 import ClubsManager from "./components/ClubsManager";
@@ -17,12 +16,14 @@ import CalendarManager from "./components/CalendarManager";
 import FacultyManager from "./components/FacultyManager";
 import SettingsManager from "./components/SettingsManager";
 import JobsManager from "./components/JobsManager";
+import FlashNewsManager from "./components/FlashNewsManager";
 
-type Tab = "gallery" | "news" | "clubs" | "milestones" | "calendar" | "faculty" | "settings" | "jobs";
+type Tab = "gallery" | "news" | "flashnews" | "clubs" | "milestones" | "calendar" | "faculty" | "settings" | "jobs";
 
 const tabs = [
   { id: "gallery" as Tab, label: "Gallery", icon: <FiImage size={18} /> },
   { id: "news" as Tab, label: "News & Events", icon: <FiFileText size={18} /> },
+  { id: "flashnews" as Tab, label: "Flash News", icon: <FiRadio size={18} /> },
   { id: "clubs" as Tab, label: "Clubs & Forums", icon: <FiUsers size={18} /> },
   { id: "milestones" as Tab, label: "Milestones", icon: <FiClock size={18} /> },
   { id: "calendar" as Tab, label: "Academic Calendar", icon: <FiCalendar size={18} /> },
@@ -47,7 +48,6 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -66,7 +66,6 @@ export default function AdminDashboard() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Tabs */}
         <div className="bg-white rounded-xl border border-gray-200 mb-6 overflow-x-auto">
           <div className="flex gap-2 p-2 min-w-max">
             {tabs.map((tab) => (
@@ -86,10 +85,10 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Content Area */}
         <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
           {activeTab === "gallery" && <GalleryManager />}
           {activeTab === "news" && <NewsManager />}
+          {activeTab === "flashnews" && <FlashNewsManager />}
           {activeTab === "clubs" && <ClubsManager />}
           {activeTab === "milestones" && <MilestonesManager />}
           {activeTab === "calendar" && <CalendarManager />}

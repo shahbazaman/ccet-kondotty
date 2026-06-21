@@ -1,32 +1,56 @@
 "use client";
 import { useEffect, useState } from "react";
-import Link from "next/link";
+
+const FORM_LINK = "https://form.svhrt.com/6a16a958682986fcc0d14779";
 
 export default function ManagementQuotaButton() {
-  const [visible, setVisible] = useState(true);
+  const [blink, setBlink] = useState(true);
 
-  // Blink effect via state toggle
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisible(v => !v);
+      setBlink(v => !v);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <Link
-      href="/admissions"
-      className="fixed left-4 bottom-24 z-50 flex flex-col items-center gap-1 cursor-pointer"
-      aria-label="Management Quota Admission"
+    <a
+      href={FORM_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed top-20 right-0 z-50 flex flex-col items-center cursor-pointer group"
+      aria-label="Management Quota Admission Form"
+      style={{ textDecoration: "none" }}
     >
       <div
-        className="bg-[#8B0000] text-white rounded-full shadow-2xl flex flex-col items-center justify-center px-3 py-2 text-center border-2 border-yellow-400 transition-opacity duration-500"
-        style={{ opacity: visible ? 1 : 0.2, maxWidth: "90px" }}
+        className="flex flex-col items-center justify-center rounded-l-xl shadow-2xl border-2 border-yellow-400 px-2 py-3 transition-all group-hover:scale-105"
+        style={{
+          background: "#8B0000",
+          opacity: blink ? 1 : 0.35,
+          transition: "opacity 0.6s ease",
+          maxWidth: "72px",
+        }}
       >
-        <span className="text-lg">🎓</span>
-        <span className="text-[9px] font-bold uppercase leading-tight mt-0.5">Management Quota</span>
-        <span className="text-[8px] font-semibold text-yellow-300 leading-tight">Admission</span>
+        <span className="text-xl mb-1">🎓</span>
+        <span
+          className="text-white font-bold text-center leading-tight"
+          style={{ fontSize: "8px", letterSpacing: "0.03em" }}
+        >
+          Management
+        </span>
+        <span
+          className="text-white font-bold text-center leading-tight"
+          style={{ fontSize: "8px" }}
+        >
+          Quota
+        </span>
+        <span
+          className="text-yellow-300 font-bold text-center leading-tight mt-0.5"
+          style={{ fontSize: "7px" }}
+        >
+          Apply Now
+        </span>
       </div>
-    </Link>
+    </a>
   );
 }

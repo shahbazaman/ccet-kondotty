@@ -5,33 +5,6 @@ import Animate from "@/components/ui/Animate";
 import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 
-const contactInfo = [
-  {
-      icon: <FiMapPin size={22} className="text-primary" />,
-      label: "Address",
-      value: settings.address,
-      href: "https://maps.google.com/?q=Kondotty,Malappuram,Kerala",
-    },
-    {
-      icon: <FiPhone size={22} className="text-primary" />,
-      label: "Phone",
-      value: `${settings.phone1} / ${settings.phone2}`,
-      href: `tel:${settings.phone1}`,
-    },
-    {
-      icon: <FiMail size={22} className="text-primary" />,
-      label: "Email",
-      value: settings.email,
-      href: `mailto:${settings.email}`,
-    },
-  {
-    icon: <FiClock size={22} className="text-primary" />,
-    label: "Office Hours",
-    value: "Monday – Saturday: 9:00 AM – 5:00 PM",
-    href: null,
-  },
-];
-
 export default function ContactPage() {
   const [settings, setSettings] = useState({
     phone1: "+91 9605448905",
@@ -49,6 +22,34 @@ export default function ContactPage() {
       })
       .catch(console.error);
   }, []);
+
+  const contactInfo = [
+    {
+      icon: <FiMapPin size={22} className="text-primary" />,
+      label: "Address",
+      value: settings.address,
+      href: "https://maps.google.com/?q=Kondotty,Malappuram,Kerala",
+    },
+    {
+      icon: <FiPhone size={22} className="text-primary" />,
+      label: "Phone",
+      value: `${settings.phone1} / ${settings.phone2}`,
+      href: `tel:${settings.phone1}`,
+    },
+    {
+      icon: <FiMail size={22} className="text-primary" />,
+      label: "Email",
+      value: settings.email,
+      href: `mailto:${settings.email}`,
+    },
+    {
+      icon: <FiClock size={22} className="text-primary" />,
+      label: "Office Hours",
+      value: "Monday – Saturday: 9:00 AM – 5:00 PM",
+      href: null,
+    },
+  ];
+
   return (
     <>
       {/* Hero */}
@@ -91,14 +92,16 @@ export default function ContactPage() {
               <div>
                 <p className="text-sm font-semibold text-gray-700 mb-3">Connect With Us</p>
                 <div className="flex gap-3 flex-wrap">
+                  
                   <a
-                    href={`https://wa.me/919497588562?text=${encodeURIComponent("Hello! I would like to know more about CCET Kondotty.")}`}
+                    href={`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent("Hello! I would like to know more about CCET Kondotty.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-green-100 text-green-700 font-semibold text-sm px-4 py-2.5 rounded-xl hover:bg-green-200 transition-colors"
                   >
                     <FaWhatsapp size={18} /> WhatsApp Us
                   </a>
+                  
                   <a
                     href="https://facebook.com"
                     target="_blank"
@@ -107,6 +110,7 @@ export default function ContactPage() {
                   >
                     <FaFacebook size={18} /> Facebook
                   </a>
+                  
                   <a
                     href="https://instagram.com"
                     target="_blank"
@@ -135,7 +139,7 @@ export default function ContactPage() {
                   const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
 
                   const text = `📩 *Contact Enquiry – CCET*\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n📧 *Email:* ${email}\n📌 *Subject:* ${subject}\n💬 *Message:* ${message}`;
-                  window.open(`https://wa.me/919497588562?text=${encodeURIComponent(text)}`, "_blank");
+                  window.open(`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(text)}`, "_blank");
                   form.reset();
                 }}
                 className="space-y-4"
@@ -219,7 +223,7 @@ export default function ContactPage() {
             <p className="text-blue-200 mb-6">Admissions for 2026–2027 are now open. Apply online or visit us in person.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/admissions" className="btn-primary">Apply Now</a>
-              <a href="tel:+919497588562" className="btn-outline">📞 Call Us</a>
+              <a href={`tel:${settings.phone2}`} className="btn-outline">📞 Call Us</a>
             </div>
           </Animate>
         </div>

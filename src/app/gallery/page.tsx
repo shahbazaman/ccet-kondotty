@@ -1,24 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
-
-const galleryItems = [
-  { label: "AI Lab – Students in action", bg: "from-blue-400 to-indigo-600" },
-  { label: "Training Kitchen – Culinary session", bg: "from-amber-400 to-orange-600" },
-  { label: "Nutrition Lab – Food analysis", bg: "from-green-400 to-emerald-600" },
-  { label: "Campus – Aerial view", bg: "from-sky-400 to-blue-600" },
-  { label: "Annual Day Celebrations", bg: "from-pink-400 to-rose-600" },
-  { label: "Sports Day – Athletics Meet", bg: "from-teal-400 to-cyan-600" },
-  { label: "Seminar – Industry Expert Talk", bg: "from-violet-400 to-purple-600" },
-  { label: "Student Cultural Fest", bg: "from-yellow-400 to-amber-600" },
-  { label: "Library – Reading Room", bg: "from-slate-400 to-gray-600" },
-  { label: "Graduation Day 2024", bg: "from-red-400 to-rose-600" },
-  { label: "Community Nutrition Outreach", bg: "from-lime-400 to-green-600" },
-  { label: "Hotel Management – Service Training", bg: "from-orange-400 to-amber-700" },
-];
+import Animate from "@/components/ui/Animate";
 
 export default function GalleryPage() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<any[]>([]);
   const [filter, setFilter] = useState("All");
 
   useEffect(() => {

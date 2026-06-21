@@ -129,9 +129,8 @@ export default function AdmissionsPage() {
       <section className="bg-white section-padding py-10">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           <Animate animation="slide-left">
-            <div className="border-2 border-[#8B0000] bg-red-50 rounded-2xl p-6 relative">
-              <span className="absolute -top-3 left-4 bg-[#8B0000] text-white text-xs font-bold px-3 py-1 rounded-full">PRIORITY</span>
-              <h3 className="font-heading font-bold text-[#8B0000] text-lg mb-2">🏢 Management Quota</h3>
+            <div className="border-l-4 border-accent bg-orange-50 rounded-2xl p-6">
+              <h3 className="font-heading font-bold text-accent text-lg mb-2">🏢 Management Quota</h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">Apply directly to CCET. Limited seats. Fill the online form — selection based on eligibility and interview. Fast and simple process.</p>
               <a
                 href={MGMT_FORM_LINK}

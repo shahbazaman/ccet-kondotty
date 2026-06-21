@@ -5,6 +5,7 @@ import Animate from "@/components/ui/Animate";
 
 export default function GalleryPage() {
   const [images, setImages] = useState<any[]>([]);
+  // images will show empty grid with message until admin adds photos
   const [filter, setFilter] = useState("All");
 
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function GalleryPage() {
                 </div>
               </Animate>
             )) : (
-              <p className="text-gray-400 col-span-4 text-center py-12">Loading gallery...</p>
+              <p className="text-gray-400 col-span-4 text-center py-12">No gallery images yet. Admin can add photos from the dashboard.</p>
             )}
           </div>
         </div>

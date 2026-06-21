@@ -1,13 +1,13 @@
 export const courses = [
   {
-    slug: "bsc-artificial-intelligence",
+    slug: "artificial-intelligence",
     title: "B.Sc Artificial Intelligence",
     shortTitle: "B.Sc AI",
     icon: "🤖",
     duration: "4 Years",
     intake: "24 Seats",
     affiliation: "University of Calicut",
-    eligibility: "Plus Two with Science (Mathematics/Computer Science)",
+    eligibility: "Plus Two with Mathematics / Computer Science / Computer Application / IT / Informatics Practice or equivalent. (UO Note No. 107590/GA–IV–J1/2023/Admn, Dated: 11.05.2023)",
     description:
       "A cutting-edge undergraduate programme that equips students with the foundational and applied knowledge of Artificial Intelligence, Machine Learning, Deep Learning, Natural Language Processing and Data Science. Students gain hands-on experience through industry-aligned projects and internships.",
     highlights: [
@@ -34,14 +34,14 @@ export const courses = [
     bgLight: "bg-blue-50",
   },
   {
-    slug: "bsc-nutrition-dietetics",
-    title: "B.Sc Nutrition and Dietetics",
+    slug: "nutrition-dietetics",
+    title: "B.Sc Home Science – Nutrition and Dietetics",
     shortTitle: "B.Sc Nutrition",
     icon: "🥗",
     duration: "4 Years",
     intake: "24 Seats",
     affiliation: "University of Calicut",
-    eligibility: "Plus Two with Science (Biology/Chemistry)",
+    eligibility: "B.Sc Degree with Home Science / Family & Community Science / Dietetics / Clinical Nutrition / Nutrition & Dietetics / Food Science / related programme with minimum 50% aggregate marks. OBC/OEC: 5% relaxation. SC/ST: pass only.",
     description:
       "An applied science programme designed to develop competent nutrition and dietetics professionals capable of promoting health and preventing disease through evidence-based dietary practices. The curriculum balances theory with clinical and community nutrition experience.",
     highlights: [
@@ -68,14 +68,14 @@ export const courses = [
     bgLight: "bg-green-50",
   },
   {
-    slug: "bsc-hotel-management",
-    title: "B.Sc Hotel Management and Catering Science",
+    slug: "hotel-management",
+    title: "B.Sc Hotel Management and Catering Science Honours",
     shortTitle: "B.Sc Hotel Mgmt",
     icon: "🏨",
     duration: "4 Years",
     intake: "24 Seats",
     affiliation: "University of Calicut",
-    eligibility: "Plus Two in any stream",
+    eligibility: "Plus Two (any stream) with minimum 50% marks. OBC/OEC: 5% concession. SC/ST: pass only. (U.O.No.GAI/J2/2907/2003)",
     description:
       "A professional programme that prepares graduates for leadership roles in the global hospitality industry. Students are trained in hotel operations, food production, food & beverage service, front office management, and housekeeping across state-of-the-art training kitchens and mock hotel facilities.",
     highlights: [

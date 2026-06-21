@@ -44,12 +44,18 @@ const governingBody = [
 ];
 
 export default function AboutPage() {
-  const [milestones, setMilestones] = useState([]);
+  const [milestones, setMilestones] = useState([
+    { _id: "1", year: "1995", event: "CCET established under Kondotty Cooperative Educational Society Ltd. (Reg. No. M 497)." },
+    { _id: "2", year: "1995", event: "Started with Arts & Science Courses, serving students from the Malabar region." },
+    { _id: "3", year: "2024", event: "Affiliation renewed with University of Calicut under CUFYUGP Regulations 2024." },
+    { _id: "4", year: "2026", event: "B.Sc AI, Nutrition & Dietetics, and Hotel Management launched. New AI lab and Food Science lab inaugurated." },
+    { _id: "5", year: "2026", event: "MoUs signed with leading hospitals and industry partners. Admissions open for 2026–2027." },
+  ]);
 
   useEffect(() => {
     fetch("/api/milestones")
       .then(res => res.json())
-      .then(data => setMilestones(data))
+      .then(data => { if (Array.isArray(data) && data.length > 0) setMilestones(data); })
       .catch(console.error);
   }, []);
   return (

@@ -2,13 +2,86 @@
 import { useEffect, useState } from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
 
+const staticFaculty = [
+  {
+    _id: "1",
+    name: "Dr. Bindu Sheena",
+    designation: "Assistant Professor & Head",
+    department: "Department of English",
+    qualification: "M.A. English Language & Literature, M.A. Sociology, M.Ed., PGDELT, NET, SET, Ph.D. (ELT)",
+    experience: "Over 30 years of teaching experience",
+    expertise: "English Language Teaching (ELT), Communication Skills, Educational Research",
+    photo: "",
+  },
+  {
+    _id: "2",
+    name: "Mr. P. E. Firozkhan",
+    designation: "Assistant Professor",
+    department: "Department of English",
+    qualification: "M.A. English Literature, M.A. Sociology, B.Ed. (English & History), SET",
+    experience: "28 Years of Teaching and Academic Leadership Experience",
+    expertise: "English Language & Literature, Sociology, Educational Leadership",
+    photo: "",
+  },
+  {
+    _id: "3",
+    name: "Mrs. Priyanka Govind",
+    designation: "Assistant Professor & Head",
+    department: "Department of Nutrition & Dietetics",
+    qualification: "M.Phil. Food & Nutrition, M.Sc. Nutrition & Dietetics (First Rank), NET",
+    experience: "10+ Years of Academic, Clinical, and Administrative Experience",
+    expertise: "Clinical Nutrition, Dietetics, Food Science, Research Methodology",
+    photo: "",
+  },
+  {
+    _id: "4",
+    name: "Mr. Navas P",
+    designation: "Assistant Professor & Head",
+    department: "Department of Hotel Management & Catering Science",
+    qualification: "MBA Tourism & Travel Management, UGC-NET, B.Tourism & Hotel Management",
+    experience: "Academic, Hospitality Industry, and Tourism Administration Experience",
+    expertise: "Tourism Management, Hospitality Operations, F&B Service, Career Readiness",
+    photo: "",
+  },
+  {
+    _id: "5",
+    name: "Mrs. Rinya C. V.",
+    designation: "Assistant Professor & Head",
+    department: "Department of Artificial Intelligence",
+    qualification: "M.Sc. Computer Science, UGC-NET, B.Sc. Computer Science",
+    experience: "5+ Years of Teaching Experience in Computer Science",
+    expertise: "Computer Networking, Data Structures, DBMS, Information Security, AI",
+    photo: "",
+  },
+  {
+    _id: "6",
+    name: "Mr. Jubair K",
+    designation: "Librarian",
+    department: "Library",
+    qualification: "M.Sc. Mathematics, M.L.I.Sc., B.Ed., B.P.Ed., PGDLAN, PGDCA, PGPCA",
+    experience: "20+ Years in Library Management, Academic Support & Information Technology",
+    expertise: "Library & Information Science, Educational Technology, Digital Resource Management",
+    photo: "",
+  },
+];
+
+const deptColors: Record<string, string> = {
+  "Department of English": "bg-blue-100 text-blue-800",
+  "Department of Nutrition & Dietetics": "bg-green-100 text-green-800",
+  "Department of Hotel Management & Catering Science": "bg-amber-100 text-amber-800",
+  "Department of Artificial Intelligence": "bg-indigo-100 text-indigo-800",
+  "Library": "bg-gray-100 text-gray-700",
+};
+
 export default function FacultyPage() {
-  const [facultyList, setFacultyList] = useState<any[]>([]);
+  const [facultyList, setFacultyList] = useState<any[]>(staticFaculty);
 
   useEffect(() => {
     fetch("/api/faculty")
       .then(res => res.json())
-      .then(data => setFacultyList(data))
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) setFacultyList(data);
+      })
       .catch(console.error);
   }, []);
 
@@ -22,30 +95,34 @@ export default function FacultyPage() {
         </div>
       </section>
 
-      {/* Faculty Grid */}
       <section className="bg-white section-padding">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading badge="Our Team" title="Meet Our Faculty" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {facultyList.length > 0 ? facultyList.map((member: any, i: number) => (
-              <div key={member._id} className="card p-6 text-center">
-                <div className="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4 overflow-hidden flex items-center justify-center">
+          <SectionHeading badge="Our Team" title="Faculty & Staff" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {facultyList.map((member: any) => (
+              <div key={member._id} className="rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-6 bg-white flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-light mx-auto mb-4 overflow-hidden flex items-center justify-center text-3xl">
                   {member.photo ? (
                     <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
                   ) : (
-                    <span className="text-3xl text-gray-400">👤</span>
+                    <span>👤</span>
                   )}
                 </div>
-                <h3 className="font-heading font-bold text-primary mb-1">{member.name}</h3>
+                <h3 className="font-heading font-bold text-primary text-base mb-1">{member.name}</h3>
                 <p className="text-xs text-gray-600 mb-1">{member.designation}</p>
-                <p className="text-xs text-accent font-medium mb-2">{member.department}</p>
-                <p className="text-xs text-gray-500">{member.qualification}</p>
-                {member.email && <p className="text-xs text-gray-500 mt-2">{member.email}</p>}
-                {member.phone && <p className="text-xs text-gray-500">{member.phone}</p>}
+                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full mb-3 ${deptColors[member.department] || "bg-gray-100 text-gray-700"}`}>
+                  {member.department}
+                </span>
+                <p className="text-xs text-gray-500 mb-2 leading-relaxed">{member.qualification}</p>
+                {(member.experience || member.expertise) && (
+                  <div className="mt-2 pt-2 border-t border-gray-100 w-full text-left space-y-1">
+                    {member.experience && <p className="text-xs text-gray-500"><span className="font-semibold text-gray-600">Experience:</span> {member.experience}</p>}
+                    {member.expertise && <p className="text-xs text-gray-500"><span className="font-semibold text-gray-600">Expertise:</span> {member.expertise}</p>}
+                  </div>
+                )}
+                {member.email && <p className="text-xs text-gray-400 mt-2">{member.email}</p>}
               </div>
-            )) : (
-              <p className="text-gray-400 col-span-4 text-center py-12">Loading faculty...</p>
-            )}
+            ))}
           </div>
         </div>
       </section>

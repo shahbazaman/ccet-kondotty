@@ -4,6 +4,16 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const staticFaculty = [
   {
+    _id: "0",
+    name: "Dr. Sudheeran C",
+    designation: "Principal",
+    department: "Administration",
+    qualification: "",
+    experience: "",
+    expertise: "",
+    photo: "/faculty/principal.png",
+  },
+  {
     _id: "1",
     name: "Dr. Bindu Sheena",
     designation: "Assistant Professor & Head",
@@ -59,13 +69,14 @@ const staticFaculty = [
     designation: "Librarian",
     department: "Library",
     qualification: "M.Sc. Mathematics, M.L.I.Sc., B.Ed., B.P.Ed., PGDLAN, PGDCA, PGPCA",
-    experience: "20+ Years in Library Management, Academic Support & Information Technology",
+    experience: "20+ Years of Experience in Education, Academic and Library Management",
     expertise: "Library & Information Science, Educational Technology, Digital Resource Management",
     photo: "/faculty/jubair-k.png",
   },
 ];
 
 const deptColors: Record<string, string> = {
+  "Administration": "bg-red-100 text-red-800",       // ← add this line
   "Department of English": "bg-blue-100 text-blue-800",
   "Department of Nutrition & Dietetics": "bg-green-100 text-green-800",
   "Department of Hotel Management & Catering Science": "bg-amber-100 text-amber-800",

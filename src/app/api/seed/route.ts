@@ -3,6 +3,18 @@ import clientPromise from "@/lib/mongodb";
 
 const defaultFaculty = [
   {
+    name: "Dr. Sudheeran C",
+    designation: "Principal",
+    department: "Administration",
+    qualification: "",
+    experience: "",
+    expertise: "",
+    photo: "/faculty/principal.png",
+    email: "",
+    phone: "",
+    order: 0,
+  },
+  {
     name: "Dr. Bindu Sheena",
     designation: "Assistant Professor & Head",
     department: "Department of English",

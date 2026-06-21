@@ -32,7 +32,7 @@ export default function FlashNews() {
       {/* Label */}
       <div
         className="shrink-0 flex items-center px-5 z-10"
-        style={{ background: "#FFDF00", minWidth: "120px" }}
+        style={{ background: "#000000", minWidth: "120px" }}
       >
         <span className="text-white text-xs font-bold uppercase tracking-widest whitespace-nowrap">
           📢 Flash News

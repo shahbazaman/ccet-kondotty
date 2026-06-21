@@ -22,34 +22,50 @@ export default function ManagementQuotaButton() {
       aria-label="Management Quota Admission Form"
       style={{ textDecoration: "none" }}
     >
-      <div
-        className="flex flex-col items-center justify-center rounded-l-xl shadow-2xl border-2 border-yellow-400 px-2 py-3 transition-all group-hover:scale-105"
-        style={{
-          background: "#8B0000",
-          opacity: blink ? 1 : 0.35,
-          transition: "opacity 0.6s ease",
-          maxWidth: "72px",
-        }}
-      >
-        <span className="text-xl mb-1">🎓</span>
+      <div className="relative">
+        {/* LIVE badge at 45 degree angle */}
         <span
-          className="text-white font-bold text-center leading-tight"
-          style={{ fontSize: "8px", letterSpacing: "0.03em" }}
+          className="absolute -top-1 -left-3 bg-red-500 text-white font-black shadow z-10"
+          style={{
+            fontSize: "7px",
+            padding: "2px 5px",
+            borderRadius: "2px",
+            transform: "rotate(-45deg)",
+            transformOrigin: "center",
+          }}
         >
-          Management
+          LIVE
         </span>
-        <span
-          className="text-white font-bold text-center leading-tight"
-          style={{ fontSize: "8px" }}
+
+        <div
+          className="flex flex-col items-center justify-center rounded-l-xl shadow-2xl border-2 border-yellow-400 px-2 py-3 transition-all group-hover:scale-105"
+          style={{
+            background: "#8B0000",
+            opacity: blink ? 1 : 0.35,
+            transition: "opacity 0.6s ease",
+            maxWidth: "72px",
+          }}
         >
-          Quota
-        </span>
-        <span
-          className="text-yellow-300 font-bold text-center leading-tight mt-0.5"
-          style={{ fontSize: "7px" }}
-        >
-          Apply Now
-        </span>
+          <span className="text-xl mb-1">🎓</span>
+          <span
+            className="text-white font-bold text-center leading-tight"
+            style={{ fontSize: "8px", letterSpacing: "0.03em" }}
+          >
+            Management
+          </span>
+          <span
+            className="text-white font-bold text-center leading-tight"
+            style={{ fontSize: "8px" }}
+          >
+            Quota
+          </span>
+          <span
+            className="text-yellow-300 font-bold text-center leading-tight mt-0.5"
+            style={{ fontSize: "7px" }}
+          >
+            Apply Now
+          </span>
+        </div>
       </div>
     </a>
   );

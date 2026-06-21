@@ -181,7 +181,13 @@ export default function HomePage() {
           <Animate animation="fade-up">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start">
               <div className="shrink-0 flex flex-col items-center gap-2">
-                <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center text-4xl">👨‍💼</div>
+                <div className="w-24 h-24 rounded-full bg-primary/10 overflow-hidden border-2 border-primary/20">
+                  <img
+                    src="/ccet-website/public/faculty/principal.png"
+                    alt="Principal"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <p className="font-heading font-bold text-primary text-sm text-center">Principal</p>
                 <p className="text-gray-400 text-xs text-center">CCET Kondotty</p>
               </div>
@@ -305,7 +311,7 @@ export default function HomePage() {
       <section className="bg-primary text-white py-12">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center px-6">
           {[
-            { icon: <FiPhone />, label: "Call Us", value: "+91 XXXXX XXXXX", href: "tel:+919497588562" },
+            { icon: <FiPhone />, label: "Call Us", value: "+91 9497588562", href: "tel:+919497588562" },
             { icon: <FiMail />, label: "Email Us", value: "coopcollegekondotty@gmail.com", href: "mailto:coopcollegekondotty@gmail.com" },
             { icon: <FiMapPin />, label: "Visit Us", value: "Kondotty, Malappuram, Kerala", href: "/contact" },
           ].map((c, i) => (

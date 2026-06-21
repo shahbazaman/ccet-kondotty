@@ -103,7 +103,7 @@ export default function ContactPage() {
                   </a>
                   
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/kondottycoopcollege/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-blue-100 text-blue-700 font-semibold text-sm px-4 py-2.5 rounded-xl hover:bg-blue-200 transition-colors"
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   </a>
                   
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/co_operative_college_kondotty/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-pink-100 text-pink-700 font-semibold text-sm px-4 py-2.5 rounded-xl hover:bg-pink-200 transition-colors"

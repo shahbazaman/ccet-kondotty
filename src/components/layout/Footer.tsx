@@ -24,11 +24,11 @@ export default function Footer() {
             University of Calicut. Nurturing talent through co-operation and knowledge.
           </p>
           <div className="flex gap-3">
-            <a href="https://facebook.com" aria-label="Follow CCET on Facebook" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.facebook.com/kondottycoopcollege/" aria-label="Follow CCET on Facebook" target="_blank" rel="noopener noreferrer"
               className="text-gray-400 hover:text-accent transition-colors">
               <FaFacebook size={18} />
             </a>
-            <a href="https://instagram.com" aria-label="Follow CCET on Instagram" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.instagram.com/co_operative_college_kondotty/" aria-label="Follow CCET on Instagram" target="_blank" rel="noopener noreferrer"
               className="text-gray-400 hover:text-accent transition-colors">
               <FaInstagram size={18} />
             </a>

@@ -37,8 +37,9 @@ const stats = [
 ];
 
 const governingBody = [
-  { role: "President", name: "Kondotty Cooperative Educational Society", icon: <FaUserTie size={22} className="text-primary" /> },
-  { role: "Principal", name: "CCET Kondotty", icon: <FaUserTie size={22} className="text-primary" /> },
+  { role: "President", name: "VK SREEDHARAN", icon: <FaUserTie size={22} className="text-primary" /> },
+  { role: "Secretry", name: "ABOOBACKER PAMBODAN", icon: <FaUserTie size={22} className="text-primary" /> },
+  { role: "Principal", name: "Dr. SUDHEERAN CHEERAKKODA", icon: <FaUserTie size={22} className="text-primary" /> },
   { role: "Faculty Members", name: "Qualified Academicians & Industry Practitioners", icon: <FaUsers size={22} className="text-primary" /> },
   { role: "Lab Coordinators", name: "AI Lab, Food Science Lab, Kitchen Lab", icon: <FaFlask size={22} className="text-primary" /> },
 ];
@@ -145,12 +146,16 @@ export default function AboutPage() {
           </Animate>
           <Animate animation="fade-up" delay={100}>
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start">
-              <div className="shrink-0 flex flex-col items-center gap-3">
-                <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
-                  <FaUserTie size={40} className="text-primary" />
+              <div className="shrink-0 flex flex-col items-center gap-2">
+                <div className="w-24 h-24 rounded-full bg-primary/10 overflow-hidden border-2 border-primary/20">
+                  <img
+                    src="/ccet-website/public/faculty/principal.png"
+                    alt="Principal"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <p className="font-heading font-bold text-primary text-sm text-center">Principal</p>
-                <p className="text-gray-500 text-xs text-center">CCET Kondotty</p>
+                <p className="text-gray-400 text-xs text-center">CCET Kondotty</p>
               </div>
               <div>
                 <p className="text-gray-600 leading-relaxed mb-4 italic text-lg">"Education is not merely the acquisition of knowledge but the development of character, discipline, and responsibility."</p>

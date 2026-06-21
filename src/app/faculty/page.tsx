@@ -3,6 +3,7 @@ import { FiMail, FiBook, FiAward } from "react-icons/fi";
 import { faculty } from "@/data/faculty";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { useEffect, useState } from "react";
+import Animate from "@/components/ui/Animate";
 
 const departments = ["All", "AI", "Nutrition", "Hotel"];
 

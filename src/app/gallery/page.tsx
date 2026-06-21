@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect } from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const galleryItems = [
@@ -16,6 +18,19 @@ const galleryItems = [
 ];
 
 export default function GalleryPage() {
+  const [images, setImages] = useState([]);
+  const [filter, setFilter] = useState("All");
+
+  useEffect(() => {
+    fetch("/api/gallery")
+      .then(res => res.json())
+      .then(data => setImages(data))
+      .catch(console.error);
+  }, []);
+
+  const categories = ["All", ...new Set(images.map((img: any) => img.category))];
+  const filtered = filter === "All" ? images : images.filter((img: any) => img.category === filter);
+
   return (
     <>
       <section className="bg-linear-to-br from-primary-dark to-primary text-white section-padding py-20 text-center">
@@ -28,20 +43,35 @@ export default function GalleryPage() {
 
       <section className="bg-white section-padding">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading badge="Photo Gallery" title="Moments from CCET" subtitle="Academic events, campus life, cultural fests, sports and more." />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {galleryItems.map((item, i) => (
-              <div
-                key={i}
-                className={`bg-linear-to-br ${item.bg} rounded-2xl aspect-square flex items-end p-4 cursor-pointer hover:scale-105 transition-transform duration-200 shadow-md`}
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {categories.map((cat: string) => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  filter === cat
+                    ? "bg-primary text-white"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                }`}
               >
-                <span className="text-white text-xs font-semibold bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">{item.label}</span>
-              </div>
+                {cat}
+              </button>
             ))}
           </div>
-          {/* <p className="text-center text-sm text-gray-400 mt-8">
-            📸 Replace gradient placeholders with actual campus photos in <code className="bg-gray-100 px-1 rounded">public/images/gallery/</code>
-          </p> */}
+
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {filtered.length > 0 ? filtered.map((img: any, i: number) => (
+              <Animate key={img._id} animation="fade-up" delay={i * 50}>
+                <div className="aspect-square bg-gray-100 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+                  <img src={img.url} alt={img.title} className="w-full h-full object-cover" />
+                </div>
+              </Animate>
+            )) : (
+              <p className="text-gray-400 col-span-4 text-center py-12">Loading gallery...</p>
+            )}
+          </div>
         </div>
       </section>
     </>

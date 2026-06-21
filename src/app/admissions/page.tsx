@@ -1,8 +1,10 @@
+"use client";
 import Link from "next/link";
 import { FiCheckCircle, FiAlertCircle, FiArrowDown, FiDownload } from "react-icons/fi";
 import SectionHeading from "@/components/ui/SectionHeading";
 import InquiryForm from "@/components/admissions/InquiryForm";
 import Animate from "@/components/ui/Animate";
+import { useEffect, useState } from "react";
 
 const steps = [
   {
@@ -70,6 +72,14 @@ const managementQuotaDocs = [
 ];
 
 export default function AdmissionsPage() {
+  const [calendar, setCalendar] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/calendar")
+      .then(res => res.json())
+      .then(data => setCalendar(data))
+      .catch(console.error);
+  }, []);
   return (
     <>
       {/* Hero */}
@@ -179,32 +189,25 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Academic Calendar Highlight */}
-      <section className="bg-gray-50 section-padding">
-        <div className="max-w-5xl mx-auto">
-          <Animate animation="fade-up">
-            <SectionHeading badge="Academic Calendar" title="2026–2027 Key Dates" subtitle="Important academic events for the upcoming year (subject to University of Calicut notifications)." />
-          </Animate>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {[
-              { month: "June 2026", event: "Academic Year Begins" },
-              { month: "August 2026", event: "Internal Assessment" },
-              { month: "September 2026", event: "Mid Semester Exams" },
-              { month: "November 2026", event: "Internal Exams" },
-              { month: "February 2027", event: "Model Exams" },
-              { month: "March 2027", event: "Practical Exams" },
-              { month: "April 2027", event: "University Examinations" },
-              { month: "May 2027", event: "Summer Vacation" },
-            ].map((item, i) => (
-              <Animate key={item.month} animation="fade-up" delay={i * 60}>
-                <div className="bg-white rounded-xl border border-gray-100 p-4 text-center shadow-sm">
-                  <p className="text-accent font-bold text-xs mb-1">{item.month}</p>
-                  <p className="text-gray-700 text-xs leading-snug">{item.event}</p>
-                </div>
-              </Animate>
-            ))}
+<section className="bg-gray-50 section-padding">
+  <div className="max-w-5xl mx-auto">
+    <Animate animation="fade-up">
+      <SectionHeading badge="Academic Calendar" title="2026–2027 Key Dates" subtitle="Important academic events for the upcoming year (subject to University of Calicut notifications)." />
+    </Animate>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      {calendar.length > 0 ? calendar.map((item: any, i: number) => (
+        <Animate key={item._id} animation="fade-up" delay={i * 60}>
+          <div className="bg-white rounded-xl border border-gray-100 p-4 text-center shadow-sm">
+            <p className="text-accent font-bold text-xs mb-1">{item.month}</p>
+            <p className="text-gray-700 text-xs leading-snug">{item.event}</p>
           </div>
-        </div>
-      </section>
+        </Animate>
+      )) : (
+        <p className="text-gray-400 col-span-4 text-center py-8">Loading calendar...</p>
+      )}
+    </div>
+  </div>
+</section>
 
       {/* Documents Required */}
       <section id="documents-required" className="bg-white section-padding scroll-mt-20">

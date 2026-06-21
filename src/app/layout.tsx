@@ -33,7 +33,6 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <ScrollToTop />
-          {children}
           <ToastContainer position="top-center" autoClose={3000} />
         </SessionProvider>
       </body>

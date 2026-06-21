@@ -34,12 +34,12 @@ const courses = [
   { title: "B.Sc Hotel Management & Catering Science", icon: "🏨", color: "border-amber-400 hover:bg-amber-50", tag: "bg-amber-100 text-amber-800", href: "/courses/hotel-management", desc: "Food Production, F&B Service, Front Office & Hospitality Mgmt." },
 ];
 
-const news = [
-  { date: "April 2026", title: "Admissions Open for 2026–2027 Academic Year", desc: "Apply now for all three B.Sc FYUGP programmes at CCET Kondotty." },
-  { date: "March 2026", title: "New AI Lab Inaugurated at CCET", desc: "State-of-the-art Artificial Intelligence laboratory opened for student use." },
-  { date: "February 2026", title: "MoU Signed with Leading Hospitals", desc: "CCET signs MoUs with healthcare partners for Nutrition student internships." },
-  { date: "January 2026", title: "CCET Futura — Annual Tech & Cultural Fest", desc: "Students showcased innovations, culinary arts, and research at CCET Futura 2026." },
-];
+// const news = [
+//   { date: "April 2026", title: "Admissions Open for 2026–2027 Academic Year", desc: "Apply now for all three B.Sc FYUGP programmes at CCET Kondotty." },
+//   { date: "March 2026", title: "New AI Lab Inaugurated at CCET", desc: "State-of-the-art Artificial Intelligence laboratory opened for student use." },
+//   { date: "February 2026", title: "MoU Signed with Leading Hospitals", desc: "CCET signs MoUs with healthcare partners for Nutrition student internships." },
+//   { date: "January 2026", title: "CCET Futura — Annual Tech & Cultural Fest", desc: "Students showcased innovations, culinary arts, and research at CCET Futura 2026." },
+// ];
 
 const partners = [
   "Healthcare Partner 1", "Hospital Partner 2", "Industry MoU Partner 3",
@@ -47,14 +47,14 @@ const partners = [
   "Research Partner 7", "Placement Partner 8",
 ];
 
-const clubs = [
-  { icon: "🤖", name: "AI & Coding Club" },
-  { icon: "🥗", name: "Nutrition & Wellness Club" },
-  { icon: "🍳", name: "Culinary Arts Club" },
-  { icon: "📚", name: "Literary Forum" },
-  { icon: "🌿", name: "Eco & Nature Club" },
-  { icon: "🎭", name: "Cultural & Arts Forum" },
-];
+// const clubs = [
+//   { icon: "🤖", name: "AI & Coding Club" },
+//   { icon: "🥗", name: "Nutrition & Wellness Club" },
+//   { icon: "🍳", name: "Culinary Arts Club" },
+//   { icon: "📚", name: "Literary Forum" },
+//   { icon: "🌿", name: "Eco & Nature Club" },
+//   { icon: "🎭", name: "Cultural & Arts Forum" },
+// ];
 
 const facilities = [
   { icon: "🖥️", title: "AI & Computer Lab", desc: "Modern workstations with GPU-enabled systems for AI/ML training." },
@@ -66,6 +66,21 @@ const facilities = [
 ];
 
 export default function HomePage() {
+  const [news, setNews] = useState([]);
+  const [clubs, setClubs] = useState([]);
+  useEffect(() => {
+    // Fetch news
+    fetch("/api/news")
+      .then(res => res.json())
+      .then(data => setNews(data.slice(0, 4))) // Show latest 4
+      .catch(console.error);
+
+    // Fetch clubs
+    fetch("/api/clubs")
+      .then(res => res.json())
+      .then(data => setClubs(data))
+      .catch(console.error);
+  }, []);
   return (
     <>
       {/* ── Hero ── */}
@@ -209,56 +224,61 @@ export default function HomePage() {
       </section>
 
       {/* ── News & Events ── */}
-      <section className="bg-gray-50 section-padding">
-        <div className="max-w-7xl mx-auto">
-          <Animate animation="fade-up">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <span className="inline-block bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-2">Updates</span>
-                <h2 className="font-heading text-3xl font-bold text-primary">Latest News & Events</h2>
-              </div>
-              <Link href="/news" className="text-accent text-sm font-semibold hidden md:flex items-center gap-1 hover:underline">View All <FiArrowRight /></Link>
-            </div>
-          </Animate>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {news.map((n, i) => (
-              <Animate key={n.title} animation="fade-up" delay={i * 80}>
-                <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition-shadow">
-                  <span className="text-xs text-accent font-bold uppercase tracking-wide mb-2 block">{n.date}</span>
-                  <h4 className="font-heading font-bold text-primary mb-2">{n.title}</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
-                </div>
-              </Animate>
-            ))}
-          </div>
-          <div className="flex justify-center mt-6 md:hidden">
-            <Link href="/news" className="text-accent text-sm font-semibold flex items-center gap-1 hover:underline">View All News <FiArrowRight /></Link>
-          </div>
+{/* News & Events */}
+<section className="bg-gray-50 section-padding">
+  <div className="max-w-7xl mx-auto">
+    <Animate animation="fade-up">
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <span className="inline-block bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-2">Updates</span>
+          <h2 className="font-heading text-3xl font-bold text-primary">Latest News & Events</h2>
         </div>
-      </section>
+        <Link href="/news" className="text-accent text-sm font-semibold hidden md:flex items-center gap-1 hover:underline">View All <FiArrowRight /></Link>
+      </div>
+    </Animate>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {news.length > 0 ? news.map((n: any, i: number) => (
+        <Animate key={n._id} animation="fade-up" delay={i * 80}>
+          <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition-shadow">
+            <span className="text-xs text-accent font-bold uppercase tracking-wide mb-2 block">{n.date}</span>
+            <h4 className="font-heading font-bold text-primary mb-2">{n.title}</h4>
+            <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
+          </div>
+        </Animate>
+      )) : (
+        <p className="text-gray-400 col-span-2 text-center py-8">Loading news...</p>
+      )}
+    </div>
+    <div className="flex justify-center mt-6 md:hidden">
+      <Link href="/news" className="text-accent text-sm font-semibold flex items-center gap-1 hover:underline">View All News <FiArrowRight /></Link>
+    </div>
+  </div>
+</section>
 
-      {/* ── Student Clubs ── */}
-      <section className="bg-white section-padding">
-        <div className="max-w-5xl mx-auto">
-          <Animate animation="fade-up">
-            <div className="text-center mb-10">
-              <span className="inline-block bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Student Life</span>
-              <h2 className="font-heading text-3xl font-bold text-primary">Clubs & Forums</h2>
-              <p className="text-gray-500 mt-3">Life at CCET goes beyond classrooms — join communities that match your passions.</p>
-            </div>
-          </Animate>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-            {clubs.map((c, i) => (
-              <Animate key={c.name} animation="zoom-in" delay={i * 80}>
-                <div className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-gray-100 bg-gray-50 text-center hover:shadow-md transition-shadow">
-                  <span className="text-3xl">{c.icon}</span>
-                  <p className="text-xs font-medium text-gray-700 leading-snug">{c.name}</p>
-                </div>
-              </Animate>
-            ))}
+{/* Student Clubs */}
+<section className="bg-white section-padding">
+  <div className="max-w-5xl mx-auto">
+    <Animate animation="fade-up">
+      <div className="text-center mb-10">
+        <span className="inline-block bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Student Life</span>
+        <h2 className="font-heading text-3xl font-bold text-primary">Clubs & Forums</h2>
+        <p className="text-gray-500 mt-3">Life at CCET goes beyond classrooms — join communities that match your passions.</p>
+      </div>
+    </Animate>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+      {clubs.length > 0 ? clubs.map((c: any, i: number) => (
+        <Animate key={c._id} animation="zoom-in" delay={i * 80}>
+          <div className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-gray-100 bg-gray-50 text-center hover:shadow-md transition-shadow">
+            <span className="text-3xl">{c.icon}</span>
+            <p className="text-xs font-medium text-gray-700 leading-snug">{c.name}</p>
           </div>
-        </div>
-      </section>
+        </Animate>
+      )) : (
+        <p className="text-gray-400 col-span-6 text-center py-8">Loading clubs...</p>
+      )}
+    </div>
+  </div>
+</section>
 
       {/* ── Placement Partners Marquee ── */}
       <section className="bg-gray-50 section-padding py-10">

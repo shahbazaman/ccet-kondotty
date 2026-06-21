@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Animate from "@/components/ui/Animate";
 import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
@@ -6,23 +7,23 @@ import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const contactInfo = [
   {
-    icon: <FiMapPin size={22} className="text-primary" />,
-    label: "Address",
-    value: "CCET Kondotty, Malappuram District, Kerala – 673638",
-    href: "https://maps.google.com/?q=Kondotty,Malappuram,Kerala",
-  },
-  {
-    icon: <FiPhone size={22} className="text-primary" />,
-    label: "Phone",
-    value: "+91 XXXXX XXXXX",
-    href: "tel:+919497588562",
-  },
-  {
-    icon: <FiMail size={22} className="text-primary" />,
-    label: "Email",
-    value: "coopcollegekondotty@gmail.com",
-    href: "mailto:coopcollegekondotty@gmail.com",
-  },
+      icon: <FiMapPin size={22} className="text-primary" />,
+      label: "Address",
+      value: settings.address,
+      href: "https://maps.google.com/?q=Kondotty,Malappuram,Kerala",
+    },
+    {
+      icon: <FiPhone size={22} className="text-primary" />,
+      label: "Phone",
+      value: `${settings.phone1} / ${settings.phone2}`,
+      href: `tel:${settings.phone1}`,
+    },
+    {
+      icon: <FiMail size={22} className="text-primary" />,
+      label: "Email",
+      value: settings.email,
+      href: `mailto:${settings.email}`,
+    },
   {
     icon: <FiClock size={22} className="text-primary" />,
     label: "Office Hours",
@@ -32,6 +33,22 @@ const contactInfo = [
 ];
 
 export default function ContactPage() {
+  const [settings, setSettings] = useState({
+    phone1: "+91 9605448905",
+    phone2: "+91 9497588562",
+    email: "coopcollegekondotty@gmail.com",
+    address: "CCET Kondotty, Malappuram District, Kerala – 673638",
+    whatsapp: "919497588562",
+  });
+
+  useEffect(() => {
+    fetch("/api/settings")
+      .then(res => res.json())
+      .then(data => {
+        if (data.phone1) setSettings(data);
+      })
+      .catch(console.error);
+  }, []);
   return (
     <>
       {/* Hero */}

@@ -1,9 +1,11 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { FiCheckCircle } from "react-icons/fi";
 import { FaUniversity, FaHandshake, FaLeaf, FaLightbulb, FaUserTie, FaUsers, FaFlask } from "react-icons/fa";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Animate from "@/components/ui/Animate";
+import { useEffect,useState } from "react";
 
 const values = [
   { icon: <FaHandshake size={28} className="text-primary" />, title: "Co-operation", desc: "Every member of our community works together — students, faculty, staff, and management — towards a shared vision of excellence." },
@@ -12,20 +14,20 @@ const values = [
   { icon: <FaLeaf size={28} className="text-primary" />, title: "Sustainability", desc: "From cooperative governance to environmentally conscious campus practices, we believe in responsible growth." },
 ];
 
-const milestones = [
-  { year: "1995", event: "CCET established under Kondotty Cooperative Educational Society Ltd. (Reg. No. M 497)." },
-  { year: "1995", event: "Started with Arts & Science Courses, serving students from the Malabar region." },
-  {
-    year: "2026",
-    bullets: [
-      "B.Sc Nutrition and Dietetics programme launched under CUFYUGP Regulations 2024.",
-      "B.Sc Artificial Intelligence introduced, reflecting global tech demand.",
-      "B.Sc Hotel Management & Catering Science expanded with modern kitchen and training labs.",
-      "New AI lab and Food Science lab inaugurated; MoUs signed with leading hospitals and industry partners.",
-      "Admissions open for the 2026–2027 academic year across all three FYUGP programmes.",
-    ],
-  },
-];
+// const milestones = [
+//   { year: "1995", event: "CCET established under Kondotty Cooperative Educational Society Ltd. (Reg. No. M 497)." },
+//   { year: "1995", event: "Started with Arts & Science Courses, serving students from the Malabar region." },
+//   {
+//     year: "2026",
+//     bullets: [
+//       "B.Sc Nutrition and Dietetics programme launched under CUFYUGP Regulations 2024.",
+//       "B.Sc Artificial Intelligence introduced, reflecting global tech demand.",
+//       "B.Sc Hotel Management & Catering Science expanded with modern kitchen and training labs.",
+//       "New AI lab and Food Science lab inaugurated; MoUs signed with leading hospitals and industry partners.",
+//       "Admissions open for the 2026–2027 academic year across all three FYUGP programmes.",
+//     ],
+//   },
+// ];
 
 const stats = [
   { label: "Years of Excellence", value: "30+" },
@@ -42,6 +44,14 @@ const governingBody = [
 ];
 
 export default function AboutPage() {
+  const [milestones, setMilestones] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/milestones")
+      .then(res => res.json())
+      .then(data => setMilestones(data))
+      .catch(console.error);
+  }, []);
   return (
     <>
       {/* Hero */}
@@ -222,32 +232,28 @@ export default function AboutPage() {
       </section>
 
       {/* Milestones Timeline */}
-      <section className="bg-gray-50 section-padding">
-        <div className="max-w-4xl mx-auto">
-          <Animate animation="fade-up">
-            <SectionHeading badge="Our Journey" title="Milestones & History" subtitle="A timeline of growth, achievement and commitment." />
-          </Animate>
-          <div className="relative border-l-4 border-primary/20 ml-6 space-y-8">
-            {milestones.map((m, i) => (
-              <Animate key={i} animation="slide-left" delay={i * 100}>
-                <div className="relative pl-8">
-                  <div className="absolute -left-5 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shadow-md">
-                    {i + 1}
-                  </div>
-                  <span className="text-accent font-bold text-sm block mb-1">{m.year}</span>
-                  {"event" in m ? (
-                    <p className="text-gray-700 text-sm leading-relaxed">{m.event}</p>
-                  ) : (
-                    <ul className="list-disc list-inside text-gray-700 text-sm leading-relaxed space-y-1">
-                      {m.bullets.map((b, j) => <li key={j}>{b}</li>)}
-                    </ul>
-                  )}
-                </div>
-              </Animate>
-            ))}
+<section className="bg-gray-50 section-padding">
+  <div className="max-w-4xl mx-auto">
+    <Animate animation="fade-up">
+      <SectionHeading badge="Our Journey" title="Milestones & History" subtitle="A timeline of growth, achievement and commitment." />
+    </Animate>
+    <div className="relative border-l-4 border-primary/20 ml-6 space-y-8">
+      {milestones.length > 0 ? milestones.map((m: any, i: number) => (
+        <Animate key={m._id} animation="slide-left" delay={i * 100}>
+          <div className="relative pl-8">
+            <div className="absolute -left-5 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shadow-md">
+              {i + 1}
+            </div>
+            <span className="text-accent font-bold text-sm block mb-1">{m.year}</span>
+            <p className="text-gray-700 text-sm leading-relaxed">{m.event}</p>
           </div>
-        </div>
-      </section>
+        </Animate>
+      )) : (
+        <p className="text-gray-400 text-center py-8">Loading milestones...</p>
+      )}
+    </div>
+  </div>
+</section>
 
       {/* Facilities Quick Overview */}
       <section className="bg-white section-padding">

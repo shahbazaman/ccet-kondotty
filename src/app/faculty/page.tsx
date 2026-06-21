@@ -11,7 +11,7 @@ const staticFaculty = [
     qualification: "M.A. English Language & Literature, M.A. Sociology, M.Ed., PGDELT, NET, SET, Ph.D. (ELT)",
     experience: "Over 30 years of teaching experience",
     expertise: "English Language Teaching (ELT), Communication Skills, Educational Research",
-    photo: "",
+    photo: "/faculty/bindu-sheena.png",
   },
   {
     _id: "2",
@@ -21,7 +21,7 @@ const staticFaculty = [
     qualification: "M.A. English Literature, M.A. Sociology, B.Ed. (English & History), SET",
     experience: "28 Years of Teaching and Academic Leadership Experience",
     expertise: "English Language & Literature, Sociology, Educational Leadership",
-    photo: "",
+    photo: "/faculty/firozkhan.png",
   },
   {
     _id: "3",
@@ -31,7 +31,7 @@ const staticFaculty = [
     qualification: "M.Phil. Food & Nutrition, M.Sc. Nutrition & Dietetics (First Rank), NET",
     experience: "10+ Years of Academic, Clinical, and Administrative Experience",
     expertise: "Clinical Nutrition, Dietetics, Food Science, Research Methodology",
-    photo: "",
+    photo: "/faculty/priyanka-govind.png",
   },
   {
     _id: "4",
@@ -41,7 +41,7 @@ const staticFaculty = [
     qualification: "MBA Tourism & Travel Management, UGC-NET, B.Tourism & Hotel Management",
     experience: "Academic, Hospitality Industry, and Tourism Administration Experience",
     expertise: "Tourism Management, Hospitality Operations, F&B Service, Career Readiness",
-    photo: "",
+    photo: "/faculty/navas-p.png",
   },
   {
     _id: "5",
@@ -51,7 +51,7 @@ const staticFaculty = [
     qualification: "M.Sc. Computer Science, UGC-NET, B.Sc. Computer Science",
     experience: "5+ Years of Teaching Experience in Computer Science",
     expertise: "Computer Networking, Data Structures, DBMS, Information Security, AI",
-    photo: "",
+    photo: "/faculty/rinya-cv.png",
   },
   {
     _id: "6",
@@ -61,7 +61,7 @@ const staticFaculty = [
     qualification: "M.Sc. Mathematics, M.L.I.Sc., B.Ed., B.P.Ed., PGDLAN, PGDCA, PGPCA",
     experience: "20+ Years in Library Management, Academic Support & Information Technology",
     expertise: "Library & Information Science, Educational Technology, Digital Resource Management",
-    photo: "",
+    photo: "/faculty/jubair-k.png",
   },
 ];
 

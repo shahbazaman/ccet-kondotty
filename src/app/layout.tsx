@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import "./globals.css"; // adjust path if needed — this assumes globals.css is in app/
+import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-import { ToastContainer} from "react-toastify";
+import FlashNews from "@/components/ui/FlashNews";
+import ManagementQuotaButton from "@/components/ui/ManagementQuotaButton";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SessionProvider from "@/components/SessionProvider";
+
 export const metadata: Metadata = {
   title: "CCET Kondotty | Co-Operative College of Education & Technology",
   description:
@@ -28,11 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SessionProvider>          
+        <SessionProvider>
           <Navbar />
+          <FlashNews />
           <main>{children}</main>
           <Footer />
           <ScrollToTop />
+          <ManagementQuotaButton />
           <ToastContainer position="top-center" autoClose={3000} />
         </SessionProvider>
       </body>

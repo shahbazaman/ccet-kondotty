@@ -110,7 +110,7 @@ export default function HotelManagementCoursePage() {
             <span className="inline-block bg-accent text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
               B.Sc Honours Programme
             </span>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Hotel Management & Catering Science</h1>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Hotel Management & Catering Science Honours</h1>
             <p className="text-amber-200 text-lg mb-6">4-Year FYUGP · University of Calicut · CUFYUGP Regulations 2024</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/admissions" className="btn-primary">Apply Now</Link>
@@ -127,7 +127,7 @@ export default function HotelManagementCoursePage() {
             { label: "Duration", value: "4 Years" },
             { label: "Semesters", value: "8" },
             { label: "Total Credits", value: "133" },
-            { label: "Eligibility", value: "Plus Two (Any Stream)" },
+            { label: "Eligibility", value: "Plus Two (Any Stream, Min 50%)" },
           ].map((s, i) => (
             <Animate key={s.label} animation="zoom-in" delay={i * 80}>
               <div>
@@ -144,7 +144,7 @@ export default function HotelManagementCoursePage() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <Animate animation="slide-left">
             <div>
-              <SectionHeading badge="About the Course" title="B.Sc Hotel Management & Catering Science (Honours)" center={false} />
+              <SectionHeading badge="About the Course" title="B.Sc Hotel Management & Catering Science Honours" center={false} />
               <p className="text-gray-600 leading-relaxed mb-4">
                 The B.Sc Hotel Management and Catering Science Honours programme at CCET is a comprehensive
                 four-year undergraduate programme offered under CUFYUGP Regulations 2024 of the University of
@@ -166,26 +166,26 @@ export default function HotelManagementCoursePage() {
           <Animate animation="slide-right">
             <div className="bg-amber-50 rounded-2xl p-7">
               <h4 className="font-heading font-bold text-amber-800 mb-4">Eligibility Criteria</h4>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto, with <strong>not less than 50%</strong> are eligible for admission.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-700 mb-4">
                 <li className="flex gap-2">
                   <FiCheckCircle className="text-green-500 mt-0.5 shrink-0" />
-                  Plus Two in any stream (Science, Commerce, or Humanities)
+                  A concession of 5% will be given to OBC/OEC candidates
                 </li>
                 <li className="flex gap-2">
                   <FiCheckCircle className="text-green-500 mt-0.5 shrink-0" />
-                  From any recognised board — no specific subject requirement
-                </li>
-                <li className="flex gap-2">
-                  <FiCheckCircle className="text-green-500 mt-0.5 shrink-0" />
-                  Medical Fitness Certificate required at the time of admission
-                </li>
-                <li className="flex gap-2">
-                  <FiCheckCircle className="text-green-500 mt-0.5 shrink-0" />
-                  University merit seat via CAP or Management Quota
+                  SC/ST candidates need get only a pass
                 </li>
               </ul>
-              <div className="mt-6 bg-white rounded-xl p-4 border border-amber-100">
-                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">Industry Exposure</p>
+              <p className="text-xs text-gray-500 italic mb-4">
+                (U.O.No.GAI/J2/2907/2003 dated concerned)
+              </p>
+              <div className="bg-white rounded-xl p-4 border border-amber-100">
+                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">Index Mark</p>
+                <p className="text-xs text-gray-600">Total Plus Two marks only.</p>
+                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mt-3 mb-2">Industry Exposure</p>
                 <ul className="text-xs text-gray-600 space-y-1">
                   <li>• Professional kitchen & bakery lab training</li>
                   <li>• Front office & housekeeping simulations</li>

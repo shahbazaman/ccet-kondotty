@@ -84,13 +84,21 @@ export default function AICoursePage() {
           <Animate animation="slide-right">
             <div className="bg-blue-50 rounded-2xl p-7">
               <h4 className="font-heading font-bold text-primary mb-4">Eligibility Criteria</h4>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li className="flex gap-2"><FiCheckCircle className="text-green-500 mt-0.5 shrink-0" /> Plus Two (Science) with Mathematics or Computer Science</li>
-                <li className="flex gap-2"><FiCheckCircle className="text-green-500 mt-0.5 shrink-0" /> Plus Two (Commerce / Humanities) with any Computer Course</li>
-                <li className="flex gap-2"><FiCheckCircle className="text-green-500 mt-0.5 shrink-0" /> Minimum 45% aggregate marks recommended</li>
-                <li className="flex gap-2"><FiCheckCircle className="text-green-500 mt-0.5 shrink-0" /> University merit seat via CAP or Management Quota</li>
-              </ul>
-              <div className="mt-6 bg-white rounded-xl p-4 border border-blue-100">
+              <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto with <strong>Mathematics / Computer Science / Computer Application / Information Technology / Informatics Practice / Informatics / Additional Mathematics</strong> are eligible for admission.
+              </p>
+              <p className="text-xs text-gray-500 mb-4 italic">
+                (UO Note No. 107590/GA – IV – J1/2023/Admn, Dated: 11.05.2023)
+              </p>
+              <div className="bg-white rounded-xl p-4 border border-blue-100 mb-4">
+                <p className="text-xs text-gray-600 font-semibold uppercase tracking-wide mb-2">Index Mark Calculation</p>
+                <ul className="text-xs text-gray-600 space-y-1.5">
+                  <li>• <strong>Science with Maths:</strong> Total Part III marks + marks secured for Mathematics</li>
+                  <li>• <strong>Other combinations (without Maths):</strong> Total Part III marks + marks secured for Maths / Computer Science / Computer Application / IT / Informatics Practice / Informatics / Additional Mathematics</li>
+                  <li>• <strong>If both Maths and a Computer subject studied:</strong> Whichever is higher will be added</li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-blue-100">
                 <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">Pathway Options (CUFYUGP)</p>
                 <ul className="text-xs text-gray-600 space-y-1">
                   <li>• Single Major in AI</li>

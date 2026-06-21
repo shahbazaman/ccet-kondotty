@@ -149,7 +149,7 @@ export default function AboutPage() {
               <div className="shrink-0 flex flex-col items-center gap-2">
                 <div className="w-24 h-24 rounded-full bg-primary/10 overflow-hidden border-2 border-primary/20">
                   <img
-                    src="/ccet-website/public/faculty/principal.png"
+                    src="/faculty/principal.png"
                     alt="Principal"
                     className="w-full h-full object-cover"
                   />

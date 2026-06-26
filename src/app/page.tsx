@@ -6,6 +6,20 @@ import { FiArrowRight, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import Animate from "@/components/ui/Animate";
 
+/* ── Typed Interfaces for State ── */
+interface NewsItem {
+  _id: string;
+  date: string;
+  title: string;
+  desc: string;
+}
+
+interface ClubItem {
+  _id: string;
+  icon: string;
+  name: string;
+}
+
 /* ── Animated counter ── */
 function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -66,8 +80,10 @@ const facilities = [
 ];
 
 export default function HomePage() {
-  const [news, setNews] = useState([]);
-  const [clubs, setClubs] = useState([]);
+  /* Added proper TypeScript types here to prevent never[] errors */
+  const [news, setNews] = useState<NewsItem[]>([]);
+  const [clubs, setClubs] = useState<ClubItem[]>([]);
+
   useEffect(() => {
     // Fetch news
     fetch("/api/news")
@@ -81,12 +97,12 @@ export default function HomePage() {
       .then(data => setClubs(data))
       .catch(console.error);
   }, []);
+
   return (
     <>
       {/* ── Hero ── */}
       <section className="relative bg-linear-to-br from-primary-dark to-primary text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_20%_50%,white,transparent_60%)]" />
-        {/* Adjusted main wrapper grid to allocate maximum layout priority to the right column section */}
         <div className="max-w-7xl mx-auto section-padding py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           <Animate animation="slide-left" className="lg:col-span-5">
             <div>
@@ -118,15 +134,12 @@ export default function HomePage() {
           </Animate> */}
           <Animate animation="slide-right" className="w-full h-full lg:col-span-7">
             <div className="flex justify-center lg:justify-end w-full h-full">
-              {/* Box completely widened using full column spans and locked back to responsive widescreen aspect ratios */}
               <div className="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl w-full aspect-video lg:max-w-3xl">
                 <img
                   src="/college-building.jpg"
                   alt="CCET Kondotty Campus"
-                  {/* Changed from object-cover to full element fitting structures to preserve the left and right sides */}
                   className="w-full h-full object-fill transform hover:scale-103 transition-transform duration-700 ease-out"
                 />
-                {/* Gradient overlay at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 py-6 z-10">
                   <p className="text-white font-heading font-bold text-lg md:text-xl">CCET Kondotty Campus</p>
                   <p className="text-blue-200 text-xs md:text-sm mt-0.5">Kondotty, Malappuram, Kerala</p>
@@ -241,7 +254,6 @@ export default function HomePage() {
       </section>
 
       {/* ── News & Events ── */}
-      {/* News & Events */}
       <section className="bg-gray-50 section-padding">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
@@ -252,9 +264,9 @@ export default function HomePage() {
               </div>
               <Link href="/news" className="text-accent text-sm font-semibold hidden md:flex items-center gap-1 hover:underline">View All <FiArrowRight /></Link>
             </div>
-          </  Animate>
+          </Animate>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {news.length > 0 ? news.map((n: any, i: number) => (
+            {news.length > 0 ? news.map((n, i) => (
               <Animate key={n._id} animation="fade-up" delay={i * 80}>
                 <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition-shadow">
                   <span className="text-xs text-accent font-bold uppercase tracking-wide mb-2 block">{n.date}</span>
@@ -283,7 +295,7 @@ export default function HomePage() {
             </div>
           </Animate>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-            {clubs.length > 0 ? clubs.map((c: any, i: number) => (
+            {clubs.length > 0 ? clubs.map((c, i) => (
               <Animate key={c._id} animation="zoom-in" delay={i * 80}>
                 <div className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-gray-100 bg-gray-50 text-center hover:shadow-md transition-shadow">
                   <span className="text-3xl">{c.icon}</span>

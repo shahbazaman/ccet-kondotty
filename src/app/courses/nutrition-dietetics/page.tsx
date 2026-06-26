@@ -7,95 +7,89 @@ const semesters = [
   {
     sem: "Semester 1",
     courses: [
-      "Core Course 1 – Fundamentals in Nutrition Science",
-      "Ability Enhancement Course 1 (English)",
-      "Ability Enhancement Course 2",
-      "Minor / Foundation Course 1",
-      "Minor / Foundation Course 2",
+      "Major – Fundamentals in Nutrition Science (NAD1CJ101)",
+      "Minor Course 1 & 2",
+      "Ability Enhancement Course 1 – English (ENG1FA101)",
+      "Ability Enhancement Course 2 – Additional Language",
+      "Multi-Disciplinary Course 1 – Other than Major",
     ],
   },
   {
     sem: "Semester 2",
     courses: [
-      "Core Course 2 – Fundamentals of Food Science",
-      "Ability Enhancement Course 3 (English)",
-      "Ability Enhancement Course 4",
-      "Minor / Foundation Course 3",
-      "Minor / Foundation Course 4",
+      "Major – Fundamentals in Nutrition Science (NAD1CJ101)",
+      "Minor Course 3 & 4",
+      "Ability Enhancement Course 3 – English (ENG1FA103)",
+      "Ability Enhancement Course 4 – Additional Language",
+      "Multi-Disciplinary Course 2",
     ],
   },
   {
     sem: "Semester 3",
     courses: [
-      "Core Course 3 – Human Physiology",
-      "Core Course 4 – Food Microbiology",
-      "Skill Enhancement Course 1",
-      "Value Added Course 1",
-      "Minor / Foundation Course 5",
+      "Major – Human Physiology (NAD3CJ201)",
+      "Major – Food Microbiology (NAD3CJ202)",
+      "Minor Course 5 & 6",
+      "Multi-Disciplinary Course 3 – Kerala Knowledge System",
+      "Value-Added Course 1 – English (ENG3FV108)",
     ],
   },
   {
     sem: "Semester 4",
     courses: [
-      "Core Course 5 – Nutrition Through Life Cycle",
-      "Core Course 6 – Fundamentals of Biochemistry",
-      "Value Added Course 2 (English)",
-      "Value Added Course 3 (Additional Language)",
-      "Minor / Foundation Course 6",
+      "Major – Nutrition Through Life Cycle (NAD4CJ203)",
+      "Major – Fundamentals of Biochemistry (NAD4CJ204)",
+      "Major – Principles of Diet Therapy (NAD4CJ205)",
+      "Value-Added Course 2 – English (ENG4FV109)",
+      "Value-Added Course 3 – Additional Language",
+      "Skill Enhancement Course 1 – English (ENG4FS111)",
     ],
   },
   {
     sem: "Semester 5",
     courses: [
-      "Core Course 7 – Principles of Diet Therapy",
-      "Core Course 8 – Community Nutrition",
-      "Core Course 9 – Clinical Nutrition",
-      "Core Course 10 – Geriatric Nutrition",
-      "Elective Course 1 & 2",
-      "Skill Enhancement Course 2 – Nutrition Education & Counselling",
+      "Major – Community Nutrition (NAD5CJ301)",
+      "Major – Clinical Nutrition (NAD5CJ302)",
+      "Major – Geriatric Nutrition (NAD5CJ303)",
+      "Elective Course 1 in Major",
+      "Elective Course 2 in Major",
+      "Skill Enhancement Course 2 – Nutrition Education and Counselling (NAD5FS113)",
     ],
   },
   {
     sem: "Semester 6",
     courses: [
-      "Core Course 11 – Advanced Clinical Dietetics",
-      "Core Course 12 – Food Safety & Quality Control",
-      "Elective Course 3",
-      "Skill Enhancement Course 3 – Mini Project",
-      "Internship / Field Training (Hospital / Community)",
+      "Major – Management of Special Diets (NAD6CJ304)",
+      "Major – Nutrition in Critical Care (NAD6CJ305)",
+      "Major – Nutrigenomics (NAD6CJ306)",
+      "Elective Course 3 in Major",
+      "Elective Course 4 in Major",
+      "Skill Enhancement Course 3 – Food Product Development (NAD6FS113)",
+      "Internship (NAD6CJ349)",
     ],
   },
-];
-
-const careers = [
-  "Clinical Dietitian",
-  "Public Health Nutritionist",
-  "Hospital Nutritionist",
-  "Food Analyst",
-  "Diet Counsellor",
-  "Nutrition Researcher",
-  "Wellness Coach",
-  "Food Product Developer",
-  "Community Health Worker",
-  "Sports Nutritionist",
 ];
 
 const programOutcomes = [
   "Understand the concepts of nutrition and dietetics and communicate dietary advice effectively",
   "Apply the principles of Nutrition and Dietetics to assess and address individual needs",
   "Develop, implement and monitor therapeutic diets for various medical conditions",
-  "Improve public health by educating communities about healthy eating habits",
-  "Conduct food analysis and quality assessment using modern lab techniques",
-  "Perform nutritional assessment and counselling for diverse population groups",
+  "Improve public health by educating communities about healthy eating habits and importance of nutrition",
+  "Critically evaluate and interpret scientific research in the field of nutrition",
+  "Demonstrate professionalism and ethical conduct in the field of nutrition and dietetics",
 ];
 
-const facilities = [
-  { icon: "🧪", label: "Food Science & Nutrition Lab" },
-  { icon: "🏥", label: "Hospital Internship Tie-ups" },
-  { icon: "🔬", label: "Biochemistry Lab Access" },
-  { icon: "📊", label: "Dietary Analysis Software" },
-  { icon: "🍱", label: "Diet Planning Practical Sessions" },
-  { icon: "🤝", label: "MoUs with Leading Hospitals" },
+const pathways = [
+  { title: "Single Major", desc: "The 6 courses in Bands C can be from different disciplines." },
+  { title: "Major with Multiple Disciplines", desc: "Bands C represent two different disciplines." },
+  { title: "Major with Minor", desc: "Bands C represent the same Minor discipline." },
+  { title: "Major with Vocational Minor", desc: "Bands C represent the same Vocational Minor discipline." },
+];
+
+const careers = [
+  "Clinical Dietitian", "Public Health Nutritionist", "Hospital Nutritionist",
+  "Food Analyst", "Diet Counsellor", "Nutrition Researcher",
+  "Wellness Coach", "Food Product Developer", "Sports Nutritionist",
 ];
 
 export default function NutritionCoursePage() {
@@ -106,10 +100,8 @@ export default function NutritionCoursePage() {
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <span className="text-5xl mb-4 block">🥗</span>
-            <span className="inline-block bg-accent text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
-              B.Sc Honours Programme
-            </span>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Nutrition and Dietetics</h1>
+            <span className="inline-block bg-accent text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">B.Sc Honours Programme</span>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Home Science – Nutrition and Dietetics</h1>
             <p className="text-green-200 text-lg mb-6">4-Year FYUGP · University of Calicut · CUFYUGP Regulations 2024</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/admissions" className="btn-primary">Apply Now</Link>
@@ -125,8 +117,8 @@ export default function NutritionCoursePage() {
           {[
             { label: "Duration", value: "4 Years" },
             { label: "Semesters", value: "8" },
-            { label: "Total Credits", value: "133" },
-            { label: "Eligibility", value: "Plus Two (Science + Bio/Chem)" },
+            { label: "Total Credits", value: "177" },
+            { label: "Eligibility", value: "B.Sc Degree (Related Fields)" },
           ].map((s, i) => (
             <Animate key={s.label} animation="zoom-in" delay={i * 80}>
               <div>
@@ -138,81 +130,63 @@ export default function NutritionCoursePage() {
         </div>
       </section>
 
-      {/* About Course */}
+      {/* About + Eligibility */}
       <section className="bg-white section-padding">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <Animate animation="slide-left">
             <div>
-              <SectionHeading badge="About the Course" title="B.Sc Nutrition & Dietetics (Honours)" center={false} />
+              <SectionHeading badge="About the Course" title="B.Sc Home Science – Nutrition & Dietetics (Honours)" center={false} />
               <p className="text-gray-600 leading-relaxed mb-4">
-                The B.Sc Nutrition and Dietetics Honours programme at CCET is a comprehensive four-year course designed
-                under the CUFYUGP Regulations 2024 of the University of Calicut. It focuses on human nutrition, food
-                science, diet planning, and health management.
+                The B.Sc Nutrition and Dietetics Honours programme at CCET is a comprehensive four-year course designed under the CUFYUGP Regulations 2024 of the University of Calicut. It focuses on human nutrition, food science, diet planning, and health management.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Students gain in-depth knowledge of clinical nutrition, community health, food microbiology,
-                biochemistry, and therapeutic dietetics. Practical training is conducted through food science labs
-                and internships with leading hospitals and healthcare institutions.
+                Students gain in-depth knowledge of clinical nutrition, community health, food microbiology, biochemistry, and therapeutic dietetics. Practical training is conducted through food science labs and internships with leading hospitals and healthcare institutions.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                With growing awareness of lifestyle diseases and preventive healthcare, qualified nutritionists and
-                dietitians are in high demand across hospitals, wellness centres, fitness industry, and public health
-                organisations.
+                With growing awareness of lifestyle diseases and preventive healthcare, qualified nutritionists and dietitians are in high demand across hospitals, wellness centres, and public health organisations.
               </p>
             </div>
           </Animate>
           <Animate animation="slide-right">
             <div className="bg-green-50 rounded-2xl p-7">
               <h4 className="font-heading font-bold text-green-800 mb-4">Eligibility Criteria</h4>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li className="flex gap-2">
+              <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                B.Sc Degree with <strong>Home Science / Family & Community Science / Dietetics / Clinical Nutrition / Nutrition and Dietetics / Food Science with Quality Control / Food Science and Nutrition / Food Service Management and Dietetics</strong> or other Nutrition related degree programmes in Life Science subjects (undertaking required), and BVoc Nutrition Science and Dietetics of this University or an equivalent degree.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-700 mb-4">
+                <li className="flex gap-2 items-start">
                   <FiCheckCircle className="text-green-500 mt-0.5 shrink-0" />
-                  Plus Two (Science) with Biology / Chemistry / Home Science
+                  Minimum <strong>45% aggregate marks</strong> or equivalent overall CGPA
                 </li>
-                <li className="flex gap-2">
+                <li className="flex gap-2 items-start">
                   <FiCheckCircle className="text-green-500 mt-0.5 shrink-0" />
-                  Related subjects in Life Sciences accepted
+                  OBC/OEC candidates eligible for relaxation up to 5%
                 </li>
-                <li className="flex gap-2">
+                <li className="flex gap-2 items-start">
                   <FiCheckCircle className="text-green-500 mt-0.5 shrink-0" />
-                  Minimum 45% aggregate marks recommended
-                </li>
-                <li className="flex gap-2">
-                  <FiCheckCircle className="text-green-500 mt-0.5 shrink-0" />
-                  Medical Fitness Certificate required at admission
-                </li>
-                <li className="flex gap-2">
-                  <FiCheckCircle className="text-green-500 mt-0.5 shrink-0" />
-                  University merit seat via CAP or Management Quota
+                  SC/ST candidates need only to get a pass
                 </li>
               </ul>
-              <div className="mt-6 bg-white rounded-xl p-4 border border-green-100">
-                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-2">Pathway Options (CUFYUGP)</p>
-                <ul className="text-xs text-gray-600 space-y-1">
-                  <li>• Single Major in Nutrition & Dietetics</li>
-                  <li>• Major (Nutrition) + Minor (Biochemistry & Microbiology)</li>
-                  <li>• Major (Nutrition) + Minor (Food Processing)</li>
-                </ul>
-              </div>
             </div>
           </Animate>
         </div>
       </section>
 
-      {/* Programme Outcomes */}
+      {/* Pathway Options */}
       <section className="bg-gray-50 section-padding">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
-            <SectionHeading badge="Programme Outcomes" title="What You Will Achieve" />
+            <SectionHeading badge="CUFYUGP Pathways" title="Course Distribution Pathways" subtitle="Students in Semesters I–VI can choose from 4 pathway options." />
           </Animate>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {programOutcomes.map((po, i) => (
+            {pathways.map((p, i) => (
               <Animate key={i} animation="fade-up" delay={i * 80}>
                 <div className="flex gap-3 items-start p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
-                  <span className="w-7 h-7 rounded-full bg-green-600 text-white text-xs font-bold flex items-center justify-center shrink-0">
-                    PSO{i + 1}
-                  </span>
-                  <p className="text-gray-700 text-sm leading-relaxed">{po}</p>
+                  <span className="w-7 h-7 rounded-full bg-green-700 text-white text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
+                  <div>
+                    <p className="font-semibold text-green-800 text-sm">{p.title}</p>
+                    <p className="text-gray-500 text-xs mt-0.5">{p.desc}</p>
+                  </div>
                 </div>
               </Animate>
             ))}
@@ -220,18 +194,18 @@ export default function NutritionCoursePage() {
         </div>
       </section>
 
-      {/* Facilities */}
+      {/* Programme Outcomes */}
       <section className="bg-white section-padding">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
-            <SectionHeading badge="Facilities" title="Lab & Training Facilities" subtitle="Hands-on training is central to the Nutrition & Dietetics programme at CCET." />
+            <SectionHeading badge="Programme Specific Outcomes" title="What You Will Achieve" />
           </Animate>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-            {facilities.map((f, i) => (
-              <Animate key={f.label} animation="zoom-in" delay={i * 80}>
-                <div className="flex flex-col items-center gap-3 p-6 rounded-2xl border border-gray-100 bg-gray-50 text-center hover:shadow-md transition-shadow">
-                  <span className="text-3xl">{f.icon}</span>
-                  <p className="text-sm font-medium text-gray-700">{f.label}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {programOutcomes.map((po, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 80}>
+                <div className="flex gap-3 items-start p-4 bg-gray-50 rounded-xl border border-gray-100 shadow-sm">
+                  <span className="w-7 h-7 rounded-full bg-green-600 text-white text-xs font-bold flex items-center justify-center shrink-0">PSO{i + 1}</span>
+                  <p className="text-gray-700 text-sm leading-relaxed">{po}</p>
                 </div>
               </Animate>
             ))}
@@ -243,20 +217,14 @@ export default function NutritionCoursePage() {
       <section id="syllabus" className="bg-gray-50 section-padding scroll-mt-20">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
-            <SectionHeading
-              badge="Curriculum"
-              title="Semester-wise Syllabus"
-              subtitle="Based on CUFYUGP Regulations 2024, University of Calicut. Approved by the Board of Studies in Home Science."
-            />
+            <SectionHeading badge="Curriculum" title="Semester-wise Syllabus" subtitle="Based on CUFYUGP Regulations 2024, University of Calicut. Total Credits: 177 over 8 Semesters." />
           </Animate>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {semesters.map((s, i) => (
               <Animate key={s.sem} animation="fade-up" delay={i * 80}>
                 <div className="card border border-gray-100 p-6 bg-white">
                   <h4 className="font-heading font-bold text-green-800 mb-3 flex items-center gap-2">
-                    <span className="w-7 h-7 rounded-full bg-green-700 text-white text-xs flex items-center justify-center font-bold">
-                      {i + 1}
-                    </span>
+                    <span className="w-7 h-7 rounded-full bg-green-700 text-white text-xs flex items-center justify-center font-bold">{i + 1}</span>
                     {s.sem}
                   </h4>
                   <ul className="space-y-1">
@@ -271,9 +239,7 @@ export default function NutritionCoursePage() {
             ))}
           </div>
           <Animate animation="fade-up" delay={200}>
-            <p className="text-xs text-gray-400 text-center mt-6">
-              * Semesters 7 & 8 available for students who proceed to the 4th year of the FYUGP. Elective and minor courses vary by pathway chosen.
-            </p>
+            <p className="text-xs text-gray-400 text-center mt-6">* Semesters 7 & 8 available for students who proceed to the 4th year of the FYUGP programme.</p>
           </Animate>
         </div>
       </section>
@@ -282,11 +248,7 @@ export default function NutritionCoursePage() {
       <section className="bg-white section-padding">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
-            <SectionHeading
-              badge="Career Opportunities"
-              title="Your Career After Graduation"
-              subtitle="Nutrition graduates are in high demand across healthcare, wellness, food industry, and public health sectors."
-            />
+            <SectionHeading badge="Career Opportunities" title="Your Career After Graduation" subtitle="Nutrition graduates are in demand across healthcare, wellness, food industry, and public health sectors." />
           </Animate>
           <div className="flex flex-wrap gap-3 justify-center">
             {careers.map((c, i) => (
@@ -303,9 +265,7 @@ export default function NutritionCoursePage() {
         <div className="max-w-2xl mx-auto">
           <Animate animation="fade-up">
             <h3 className="font-heading text-2xl font-bold mb-3">Start Your Journey in Nutrition Science</h3>
-            <p className="text-green-200 mb-6">
-              Limited seats available for 2026–2027. Apply today or contact our admissions office for more details.
-            </p>
+            <p className="text-green-200 mb-6">Limited seats available for 2026–2027. Apply today or contact our admissions office.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/admissions" className="btn-primary">Apply Now</Link>
               <Link href="/contact" className="btn-outline">Contact Us</Link>

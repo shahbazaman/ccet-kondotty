@@ -115,19 +115,19 @@ export default function HomePage() {
               </div>
             </div>
           </Animate> */}
-          <Animate animation="slide-right">
-            <div className="flex justify-center w-full">
-              {/* Increased size layout tracking tags below: max-w-xl and structural aspect ratio updates */}
-              <div className="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl w-full max-w-lg md:max-w-xl aspect-4/3 lg:aspect-video">
+          <Animate animation="slide-right" className="w-full h-full">
+            <div className="flex justify-center lg:justify-end w-full h-full">
+              {/* Maxed out image section to fill its grid space entirely with dynamic responsive height limits */}
+              <div className="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl w-full max-w-none aspect-video sm:aspect-4/3 lg:aspect-[4/5] max-h-[580px]">
                 <img
                   src="/college-building.jpg"
                   alt="CCET Kondotty Campus"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transform scale-102 hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                {/* Gradient overlay at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-5 py-5 z-10">
-                  <p className="text-white font-heading font-bold text-base">CCET Kondotty Campus</p>
-                  <p className="text-blue-200 text-xs">Kondotty, Malappuram, Kerala</p>
+                {/* Enhanced Gradient overlay at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 py-6 z-10">
+                  <p className="text-white font-heading font-bold text-lg md:text-xl">CCET Kondotty Campus</p>
+                  <p className="text-blue-200 text-xs md:text-sm mt-0.5">Kondotty, Malappuram, Kerala</p>
                 </div>
               </div>
             </div>
@@ -345,7 +345,7 @@ export default function HomePage() {
               <Link href="/admissions" className="bg-white text-accent font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">Apply for Admission</Link>
               <Link href="/about" className="border-2 border-white text-white font-bold px-8 py-3 rounded-xl hover:bg-white/10 transition-colors">Learn About CCET</Link>
             </div>
-          </Animate>
+          </  Animate>
         </div>
       </section>
 

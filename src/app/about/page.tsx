@@ -33,7 +33,7 @@ const stats = [
   { label: "Years of Excellence", value: "30+" },
   { label: "Programmes Offered", value: "3" },
   { label: "Affiliated University", value: "Calicut" },
-  { label: "Students Enrolled", value: "200+" },
+  { label: "Expert Faculty Members", value: "100%" },
 ];
 
 const governingBody = [

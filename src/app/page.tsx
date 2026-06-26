@@ -124,8 +124,8 @@ export default function HomePage() {
           {[
             { label: "Years of Excellence", target: 30, suffix: "+" },
             { label: "Programmes Offered", target: 3, suffix: "" },
-            { label: "Students Enrolled", target: 200, suffix: "+" },
-            { label: "Industry Partners", target: 8, suffix: "+" },
+            { label: "University Affiliated", target: 100, suffix: "%" },
+            { label: "Expert Faculties", target: 100, suffix: "%" },
           ].map((s, i) => (
             <Animate key={s.label} animation="zoom-in" delay={i * 100}>
               <div>
@@ -140,14 +140,6 @@ export default function HomePage() {
       </section>
 
       {/* ── Admission Alert Banner ── */}
-      <Animate animation="fade-in">
-        <div className="bg-amber-50 border-b border-amber-200 py-3 px-6 text-center">
-          <p className="text-amber-800 text-sm font-medium">
-            🎓 <strong>Management Quota Admissions Now Open!</strong> Limited seats available for 2026–2027.{" "}
-            <Link href="/admissions" className="underline font-bold hover:text-amber-900">Apply Today →</Link>
-          </p>
-        </div>
-      </Animate>
 
       {/* ── Courses ── */}
       <section className="bg-white section-padding">

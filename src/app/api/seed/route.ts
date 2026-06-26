@@ -3,12 +3,12 @@ import clientPromise from "@/lib/mongodb";
 
 const defaultFaculty = [
   {
-    name: "Dr. Sudheeran C",
+    name: "Dr. Sudheeran Cheerakkoda",
     designation: "Principal",
     department: "Administration",
-    qualification: "",
-    experience: "",
-    expertise: "",
+    qualification: "MA English, MA Sociology, MPhil English, MEd, NET, SET PGDCFT(Ignou), PGDELT(RIE), PGCTE(EFLU),  PhD (ENGLISH)",
+    experience: "Assistant Professor, Misurata, Libya (1.5 years), Lecturer at Kondotty Co-op College (10 years), BLOCK PROJECT coordinator , SAMAGRA SHIKSHA KERALA, BRC KONDOTTY- 3 YEARS, Over 33 years of teaching experience in Govt Schools",
+    expertise: "NATIONAL AWARD WINNER IN EDUCATIONAL ADMINISTRATION IN 2022",
     photo: "/faculty/principal.png",
     email: "",
     phone: "",

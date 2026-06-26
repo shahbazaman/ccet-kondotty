@@ -48,27 +48,11 @@ const courses = [
   { title: "B.Sc Hotel Management & Catering Science", icon: "🏨", color: "border-amber-400 hover:bg-amber-50", tag: "bg-amber-100 text-amber-800", href: "/courses/hotel-management", desc: "Food Production, F&B Service, Front Office & Hospitality Mgmt." },
 ];
 
-// const news = [
-//   { date: "April 2026", title: "Admissions Open for 2026–2027 Academic Year", desc: "Apply now for all three B.Sc FYUGP programmes at CCET Kondotty." },
-//   { date: "March 2026", title: "New AI Lab Inaugurated at CCET", desc: "State-of-the-art Artificial Intelligence laboratory opened for student use." },
-//   { date: "February 2026", title: "MoU Signed with Leading Hospitals", desc: "CCET signs MoUs with healthcare partners for Nutrition student internships." },
-//   { date: "January 2026", title: "CCET Futura — Annual Tech & Cultural Fest", desc: "Students showcased innovations, culinary arts, and research at CCET Futura 2026." },
-// ];
-
 const partners = [
   "Healthcare Partner 1", "Hospital Partner 2", "Industry MoU Partner 3",
   "Hospitality Group 4", "Food Company 5", "Tech Company 6",
   "Research Partner 7", "Placement Partner 8",
 ];
-
-// const clubs = [
-//   { icon: "🤖", name: "AI & Coding Club" },
-//   { icon: "🥗", name: "Nutrition & Wellness Club" },
-//   { icon: "🍳", name: "Culinary Arts Club" },
-//   { icon: "📚", name: "Literary Forum" },
-//   { icon: "🌿", name: "Eco & Nature Club" },
-//   { icon: "🎭", name: "Cultural & Arts Forum" },
-// ];
 
 const facilities = [
   { icon: "🖥️", title: "AI & Computer Lab", desc: "Modern workstations with GPU-enabled systems for AI/ML training." },
@@ -87,7 +71,7 @@ export default function HomePage() {
     // Fetch news
     fetch("/api/news")
       .then(res => res.json())
-      .then(data => setNews(data.slice(0, 4)))
+      .then(data => setNews(data.slice(0, 4))) 
       .catch(console.error);
 
     // Fetch clubs
@@ -123,8 +107,8 @@ export default function HomePage() {
           
           <Animate animation="slide-right" className="w-full h-full lg:col-span-7">
             <div className="flex justify-center lg:justify-end w-full h-full">
-              {/* Updated ratio from aspect-[4/5] to aspect-[3.75/5] */}
-              <div className="relative rounded-3xl overflow-hidden border-0 border-white/20 shadow-none w-full aspect-[3.75/5] lg:max-w-3xl">
+              {/* Changed structural aspect ratio to 4.25:5 to scale up width while shrinking the vertical height layout footprint */}
+              <div className="relative rounded-3xl overflow-hidden border-0 border-white/20 shadow-none w-full aspect-[4.25/5] lg:max-w-3xl">
                 <img
                   src="/college-building.jpg"
                   alt="CCET Kondotty Campus"

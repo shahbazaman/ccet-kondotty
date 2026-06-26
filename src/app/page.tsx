@@ -124,7 +124,7 @@ export default function HomePage() {
           {[
             { label: "Years of Excellence", target: 30, suffix: "+" },
             { label: "Programmes Offered", target: 3, suffix: "" },
-            { label: "University Affiliated", target: 100, suffix: "%" },
+            { label: "University Affiliated", target: "Calicut", suffix: "" },
             { label: "Expert Faculties", target: 100, suffix: "%" },
           ].map((s, i) => (
             <Animate key={s.label} animation="zoom-in" delay={i * 100}>

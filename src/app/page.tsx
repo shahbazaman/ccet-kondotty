@@ -134,8 +134,8 @@ export default function HomePage() {
           </Animate> */}
           <Animate animation="slide-right" className="w-full h-full lg:col-span-7">
             <div className="flex justify-center lg:justify-end w-full h-full">
-              {/* Reduced height variables, removed shadow layout configuration, explicitly retained custom horizontal layout stretch properties */}
-              <div className="relative rounded-3xl overflow-hidden border-0 border-white/20 shadow-none w-full h-[280px] md:h-[360px] lg:max-w-3xl">
+              {/* Height increased to h-[340px] and md:h-[450px] while cleanly retaining full width and stretching property */}
+              <div className="relative rounded-3xl overflow-hidden border-0 border-white/20 shadow-none w-full h-[340px] md:h-[450px] lg:max-w-3xl">
                 <img
                   src="/college-building.jpg"
                   alt="CCET Kondotty Campus"
@@ -361,7 +361,7 @@ export default function HomePage() {
               <Link href="/admissions" className="bg-white text-accent font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">Apply for Admission</Link>
               <Link href="/about" className="border-2 border-white text-white font-bold px-8 py-3 rounded-xl hover:bg-white/10 transition-colors">Learn About CCET</Link>
             </div>
-          </Animate>
+          </  Animate>
         </div>
       </section>
 

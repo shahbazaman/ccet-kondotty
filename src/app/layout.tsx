@@ -75,6 +75,14 @@ export const metadata: Metadata = {
     // Add your Google Search Console verification code here after you verify
     google: "946f6f5f718b5f2b",
   },
+  icons: {
+  icon: [
+    { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+    { url: "/icon.png", sizes: "512x512", type: "image/png" },
+  ],
+  apple: "/icon.png",
+  shortcut: "/favicon.ico",
+},
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

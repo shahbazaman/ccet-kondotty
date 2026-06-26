@@ -134,7 +134,7 @@ export default function HomePage() {
           </Animate> */}
           <Animate animation="slide-right" className="w-full h-full lg:col-span-7">
             <div className="flex justify-center lg:justify-end w-full h-full">
-              <div className="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl w-full aspect-video lg:max-w-3xl">
+              <div className="relative rounded-3xl overflow-hidden border-0 border-white/20 shadow-2xl w-full aspect-video lg:max-w-3xl">
                 <img
                   src="/college-building.jpg"
                   alt="CCET Kondotty Campus"

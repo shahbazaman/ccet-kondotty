@@ -365,7 +365,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Floating WhatsApp Button ── */}
       <a
         href={`https://wa.me/919497588562?text=${encodeURIComponent("Hello! I would like to know more about admissions at CCET Kondotty.")}`}
         target="_blank"

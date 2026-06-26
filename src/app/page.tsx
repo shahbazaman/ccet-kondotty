@@ -104,7 +104,7 @@ export default function HomePage() {
               </div>
             </div>
           </Animate>
-          <Animate animation="slide-right">
+          {/* <Animate animation="slide-right">
             <div className="flex justify-center">
               <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 text-center border border-white/20 max-w-sm w-full">
                 <Image src="/logo.png" alt="CCET Logo" width={160} height={160} className="mx-auto mb-5" loading="eager" style={{ height: "auto" }} />
@@ -114,7 +114,23 @@ export default function HomePage() {
                 <p className="text-xs text-blue-300">Reg. No. M 497 · CUFYUGP 2024</p>
               </div>
             </div>
-          </Animate>
+          </Animate> */}
+          <Animate animation="slide-right">
+          <div className="flex justify-center">
+            <div className="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl w-full max-w-sm aspect-video">
+              <img
+                src="/college-building.jpg"
+                alt="CCET Kondotty Campus"
+                className="w-full h-full object-cover"
+              />
+              {/* Gradient overlay at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-5 py-4">
+                <p className="text-white font-heading font-bold text-sm">CCET Kondotty Campus</p>
+                <p className="text-blue-200 text-xs">Kondotty, Malappuram, Kerala</p>
+              </div>
+            </div>
+          </div>
+        </Animate>
         </div>
       </section>
 

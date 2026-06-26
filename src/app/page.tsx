@@ -134,13 +134,14 @@ export default function HomePage() {
           </Animate> */}
           <Animate animation="slide-right" className="w-full h-full lg:col-span-7">
             <div className="flex justify-center lg:justify-end w-full h-full">
-              <div className="relative rounded-3xl overflow-hidden border-0 border-white/20 shadow-2xl w-full aspect-video lg:max-w-3xl">
+              {/* Reduced height variables, removed shadow layout configuration, explicitly retained custom horizontal layout stretch properties */}
+              <div className="relative rounded-3xl overflow-hidden border-0 border-white/20 shadow-none w-full h-[280px] md:h-[360px] lg:max-w-3xl">
                 <img
                   src="/college-building.jpg"
                   alt="CCET Kondotty Campus"
                   className="w-full h-full object-fill transform hover:scale-103 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute bottom-0 left-0 right-0  px-6 py-6 z-10">
+                <div className="absolute bottom-0 left-0 right-0 px-6 py-6 z-10">
                   {/* bg-gradient-to-t from-black/80 via-black/40 to-transparent */}
                   <p className="text-white font-heading font-bold text-lg md:text-xl">CCET Kondotty Campus</p>
                   <p className="text-blue-200 text-xs md:text-sm mt-0.5">Kondotty, Malappuram, Kerala</p>

@@ -51,13 +51,13 @@ export default function ManagementQuotaButton() {
             className="text-white font-bold text-center leading-tight"
             style={{ fontSize: "8px", letterSpacing: "0.03em" }}
           >
-            Management
+            FOR DIRECT
           </span>
           <span
             className="text-white font-bold text-center leading-tight"
             style={{ fontSize: "8px" }}
           >
-            Quota
+            ADMISSION
           </span>
           <span
             className="text-yellow-300 font-bold text-center leading-tight mt-0.5"

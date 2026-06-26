@@ -86,8 +86,9 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section className="relative bg-linear-to-br from-primary-dark to-primary text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_20%_50%,white,transparent_60%)]" />
-        <div className="max-w-7xl mx-auto section-padding py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-          <Animate animation="slide-left">
+        {/* Adjusted main wrapper grid to allocate maximum layout priority to the right column section */}
+        <div className="max-w-7xl mx-auto section-padding py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+          <Animate animation="slide-left" className="lg:col-span-5">
             <div>
               <span className="inline-block bg-accent text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
                 Admissions Open 2026–2027
@@ -115,16 +116,17 @@ export default function HomePage() {
               </div>
             </div>
           </Animate> */}
-          <Animate animation="slide-right" className="w-full h-full">
+          <Animate animation="slide-right" className="w-full h-full lg:col-span-7">
             <div className="flex justify-center lg:justify-end w-full h-full">
-              {/* Maxed out image section to fill its grid space entirely with dynamic responsive height limits */}
-              <div className="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl w-full max-w-none aspect-video sm:aspect-4/3 lg:aspect-[4/5] max-h-[580px]">
+              {/* Box completely widened using full column spans and locked back to responsive widescreen aspect ratios */}
+              <div className="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl w-full aspect-video lg:max-w-3xl">
                 <img
                   src="/college-building.jpg"
                   alt="CCET Kondotty Campus"
-                  className="w-full h-full object-cover transform scale-102 hover:scale-105 transition-transform duration-700 ease-out"
+                  {/* Changed from object-cover to full element fitting structures to preserve the left and right sides */}
+                  className="w-full h-full object-fill transform hover:scale-103 transition-transform duration-700 ease-out"
                 />
-                {/* Enhanced Gradient overlay at bottom */}
+                {/* Gradient overlay at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 py-6 z-10">
                   <p className="text-white font-heading font-bold text-lg md:text-xl">CCET Kondotty Campus</p>
                   <p className="text-blue-200 text-xs md:text-sm mt-0.5">Kondotty, Malappuram, Kerala</p>
@@ -250,7 +252,7 @@ export default function HomePage() {
               </div>
               <Link href="/news" className="text-accent text-sm font-semibold hidden md:flex items-center gap-1 hover:underline">View All <FiArrowRight /></Link>
             </div>
-          </Animate>
+          </  Animate>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {news.length > 0 ? news.map((n: any, i: number) => (
               <Animate key={n._id} animation="fade-up" delay={i * 80}>
@@ -345,7 +347,7 @@ export default function HomePage() {
               <Link href="/admissions" className="bg-white text-accent font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">Apply for Admission</Link>
               <Link href="/about" className="border-2 border-white text-white font-bold px-8 py-3 rounded-xl hover:bg-white/10 transition-colors">Learn About CCET</Link>
             </div>
-          </  Animate>
+          </Animate>
         </div>
       </section>
 

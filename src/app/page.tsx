@@ -122,15 +122,15 @@ export default function HomePage() {
       <section className="bg-accent text-white py-12">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center px-6">
           {[
-            { label: "Years of Excellence", target: 30, suffix: "+" },
-            { label: "Programmes Offered", target: 3, suffix: "" },
-            { label: "University Affiliated", target: "Calicut", suffix: "" },
-            { label: "Expert Faculties", target: 100, suffix: "%" },
+            { label: "Years of Excellence", target: 30, suffix: "+", text: null },
+            { label: "Programmes Offered", target: 3, suffix: "", text: null },
+            { label: "University Affiliated", target: 0, suffix: "", text: "Calicut" },
+            { label: "Expert Faculties", target: 6, suffix: "+", text: null },
           ].map((s, i) => (
             <Animate key={s.label} animation="zoom-in" delay={i * 100}>
               <div>
                 <p className="font-heading text-4xl font-bold">
-                  <Counter target={s.target} suffix={s.suffix} />
+                  {s.text ? s.text : <Counter target={s.target} suffix={s.suffix} />}
                 </p>
                 <p className="text-white/80 text-sm mt-1">{s.label}</p>
               </div>

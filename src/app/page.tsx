@@ -80,7 +80,6 @@ const facilities = [
 ];
 
 export default function HomePage() {
-  /* Added proper TypeScript types here to prevent never[] errors */
   const [news, setNews] = useState<NewsItem[]>([]);
   const [clubs, setClubs] = useState<ClubItem[]>([]);
 
@@ -88,7 +87,7 @@ export default function HomePage() {
     // Fetch news
     fetch("/api/news")
       .then(res => res.json())
-      .then(data => setNews(data.slice(0, 4))) // Show latest 4
+      .then(data => setNews(data.slice(0, 4)))
       .catch(console.error);
 
     // Fetch clubs
@@ -121,21 +120,11 @@ export default function HomePage() {
               </div>
             </div>
           </Animate>
-          {/* <Animate animation="slide-right">
-            <div className="flex justify-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 text-center border border-white/20 max-w-sm w-full">
-                <Image src="/logo.png" alt="CCET Logo" width={160} height={160} className="mx-auto mb-5" loading="eager" style={{ height: "auto" }} />
-                <h2 className="font-heading text-xl font-bold mb-1">CCET Kondotty</h2>
-                <p className="text-blue-200 text-sm mb-4">Co-operation · Innovation · Knowledge</p>
-                <p className="text-xs text-blue-300">Affiliated to University of Calicut</p>
-                <p className="text-xs text-blue-300">Reg. No. M 497 · CUFYUGP 2024</p>
-              </div>
-            </div>
-          </Animate> */}
+          
           <Animate animation="slide-right" className="w-full h-full lg:col-span-7">
             <div className="flex justify-center lg:justify-end w-full h-full">
-              {/* Changed container sizing to a structural 4:5 aspect ratio framework while ensuring full layout width matching */}
-              <div className="relative rounded-3xl overflow-hidden border-0 border-white/20 shadow-none w-full aspect-[4/5] lg:max-w-3xl">
+              {/* Updated ratio from aspect-[4/5] to aspect-[3.75/5] */}
+              <div className="relative rounded-3xl overflow-hidden border-0 border-white/20 shadow-none w-full aspect-[3.75/5] lg:max-w-3xl">
                 <img
                   src="/college-building.jpg"
                   alt="CCET Kondotty Campus"
@@ -171,8 +160,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      {/* ── Admission Alert Banner ── */}
 
       {/* ── Courses ── */}
       <section className="bg-white section-padding">
@@ -364,6 +351,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Floating WhatsApp Button ── */}
       <a
         href={`https://wa.me/919497588562?text=${encodeURIComponent("Hello! I would like to know more about admissions at CCET Kondotty.")}`}
         target="_blank"

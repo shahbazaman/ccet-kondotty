@@ -116,21 +116,22 @@ export default function HomePage() {
             </div>
           </Animate> */}
           <Animate animation="slide-right">
-          <div className="flex justify-center">
-            <div className="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl w-full max-w-sm aspect-video">
-              <img
-                src="/college-building.jpg"
-                alt="CCET Kondotty Campus"
-                className="w-full h-full object-cover"
-              />
-              {/* Gradient overlay at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-5 py-4">
-                <p className="text-white font-heading font-bold text-sm">CCET Kondotty Campus</p>
-                <p className="text-blue-200 text-xs">Kondotty, Malappuram, Kerala</p>
+            <div className="flex justify-center w-full">
+              {/* Increased size layout tracking tags below: max-w-xl and structural aspect ratio updates */}
+              <div className="relative rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl w-full max-w-lg md:max-w-xl aspect-4/3 lg:aspect-video">
+                <img
+                  src="/college-building.jpg"
+                  alt="CCET Kondotty Campus"
+                  className="w-full h-full object-cover"
+                />
+                {/* Gradient overlay at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-5 py-5 z-10">
+                  <p className="text-white font-heading font-bold text-base">CCET Kondotty Campus</p>
+                  <p className="text-blue-200 text-xs">Kondotty, Malappuram, Kerala</p>
+                </div>
               </div>
             </div>
-          </div>
-        </Animate>
+          </Animate>
         </div>
       </section>
 
@@ -238,61 +239,61 @@ export default function HomePage() {
       </section>
 
       {/* ── News & Events ── */}
-{/* News & Events */}
-<section className="bg-gray-50 section-padding">
-  <div className="max-w-7xl mx-auto">
-    <Animate animation="fade-up">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <span className="inline-block bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-2">Updates</span>
-          <h2 className="font-heading text-3xl font-bold text-primary">Latest News & Events</h2>
+      {/* News & Events */}
+      <section className="bg-gray-50 section-padding">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <span className="inline-block bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-2">Updates</span>
+                <h2 className="font-heading text-3xl font-bold text-primary">Latest News & Events</h2>
+              </div>
+              <Link href="/news" className="text-accent text-sm font-semibold hidden md:flex items-center gap-1 hover:underline">View All <FiArrowRight /></Link>
+            </div>
+          </Animate>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {news.length > 0 ? news.map((n: any, i: number) => (
+              <Animate key={n._id} animation="fade-up" delay={i * 80}>
+                <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition-shadow">
+                  <span className="text-xs text-accent font-bold uppercase tracking-wide mb-2 block">{n.date}</span>
+                  <h4 className="font-heading font-bold text-primary mb-2">{n.title}</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
+                </div>
+              </Animate>
+            )) : (
+              <p className="text-gray-400 col-span-2 text-center py-8">Loading news...</p>
+            )}
+          </div>
+          <div className="flex justify-center mt-6 md:hidden">
+            <Link href="/news" className="text-accent text-sm font-semibold flex items-center gap-1 hover:underline">View All News <FiArrowRight /></Link>
+          </div>
         </div>
-        <Link href="/news" className="text-accent text-sm font-semibold hidden md:flex items-center gap-1 hover:underline">View All <FiArrowRight /></Link>
-      </div>
-    </Animate>
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      {news.length > 0 ? news.map((n: any, i: number) => (
-        <Animate key={n._id} animation="fade-up" delay={i * 80}>
-          <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition-shadow">
-            <span className="text-xs text-accent font-bold uppercase tracking-wide mb-2 block">{n.date}</span>
-            <h4 className="font-heading font-bold text-primary mb-2">{n.title}</h4>
-            <p className="text-gray-500 text-sm leading-relaxed">{n.desc}</p>
-          </div>
-        </Animate>
-      )) : (
-        <p className="text-gray-400 col-span-2 text-center py-8">Loading news...</p>
-      )}
-    </div>
-    <div className="flex justify-center mt-6 md:hidden">
-      <Link href="/news" className="text-accent text-sm font-semibold flex items-center gap-1 hover:underline">View All News <FiArrowRight /></Link>
-    </div>
-  </div>
-</section>
+      </section>
 
-{/* Student Clubs */}
-<section className="bg-white section-padding">
-  <div className="max-w-5xl mx-auto">
-    <Animate animation="fade-up">
-      <div className="text-center mb-10">
-        <span className="inline-block bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Student Life</span>
-        <h2 className="font-heading text-3xl font-bold text-primary">Clubs & Forums</h2>
-        <p className="text-gray-500 mt-3">Life at CCET goes beyond classrooms — join communities that match your passions.</p>
-      </div>
-    </Animate>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-      {clubs.length > 0 ? clubs.map((c: any, i: number) => (
-        <Animate key={c._id} animation="zoom-in" delay={i * 80}>
-          <div className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-gray-100 bg-gray-50 text-center hover:shadow-md transition-shadow">
-            <span className="text-3xl">{c.icon}</span>
-            <p className="text-xs font-medium text-gray-700 leading-snug">{c.name}</p>
+      {/* Student Clubs */}
+      <section className="bg-white section-padding">
+        <div className="max-w-5xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="text-center mb-10">
+              <span className="inline-block bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Student Life</span>
+              <h2 className="font-heading text-3xl font-bold text-primary">Clubs & Forums</h2>
+              <p className="text-gray-500 mt-3">Life at CCET goes beyond classrooms — join communities that match your passions.</p>
+            </div>
+          </Animate>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            {clubs.length > 0 ? clubs.map((c: any, i: number) => (
+              <Animate key={c._id} animation="zoom-in" delay={i * 80}>
+                <div className="flex flex-col items-center gap-2 p-5 rounded-2xl border border-gray-100 bg-gray-50 text-center hover:shadow-md transition-shadow">
+                  <span className="text-3xl">{c.icon}</span>
+                  <p className="text-xs font-medium text-gray-700 leading-snug">{c.name}</p>
+                </div>
+              </Animate>
+            )) : (
+              <p className="text-gray-400 col-span-6 text-center py-8">Loading clubs...</p>
+            )}
           </div>
-        </Animate>
-      )) : (
-        <p className="text-gray-400 col-span-6 text-center py-8">Loading clubs...</p>
-      )}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* ── Placement Partners Marquee ── */}
       <section className="bg-gray-50 section-padding py-10">

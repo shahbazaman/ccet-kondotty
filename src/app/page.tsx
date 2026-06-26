@@ -140,7 +140,8 @@ export default function HomePage() {
                   alt="CCET Kondotty Campus"
                   className="w-full h-full object-fill transform hover:scale-103 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 py-6 z-10">
+                <div className="absolute bottom-0 left-0 right-0  px-6 py-6 z-10">
+                  {/* bg-gradient-to-t from-black/80 via-black/40 to-transparent */}
                   <p className="text-white font-heading font-bold text-lg md:text-xl">CCET Kondotty Campus</p>
                   <p className="text-blue-200 text-xs md:text-sm mt-0.5">Kondotty, Malappuram, Kerala</p>
                 </div>

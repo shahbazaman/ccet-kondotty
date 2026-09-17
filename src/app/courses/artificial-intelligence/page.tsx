@@ -151,7 +151,7 @@ export default function AICoursePage() {
             <div className="bg-blue-50 rounded-2xl p-7">
               <h4 className="font-heading font-bold text-primary mb-4">Eligibility Criteria</h4>
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                Plus Two with any Computer stream as Optional / Science.
+                Plus Two with any Computer stream as Optional / Mathematics.
               </p>
               <p className="text-xs text-gray-500 italic mb-4">
                 (UO Note No. 107590/GA – IV – J1/2023/Admn, Dated: 11.05.2023)

@@ -7,7 +7,7 @@ export const courses = [
     duration: "4 Years",
     intake: "24 Seats",
     affiliation: "University of Calicut",
-    eligibility: "Plus Two with any Computer stream as Optional / Science.",
+    eligibility: "Plus Two with any Computer stream as Optional / Mathematics.",
     description:
       "A cutting-edge undergraduate programme that equips students with the foundational and applied knowledge of Artificial Intelligence, Machine Learning, Deep Learning, Natural Language Processing and Data Science. Students gain hands-on experience through industry-aligned projects and internships.",
     highlights: [
@@ -41,7 +41,7 @@ export const courses = [
     duration: "4 Years",
     intake: "24 Seats",
     affiliation: "University of Calicut",
-    eligibility: "Plus Two / VHSE with Biology as one of the papers",
+    eligibility: "Plus Two / VHSE with Biology and chemistry as one of the papers",
     description:
       "An applied science programme designed to develop competent nutrition and dietetics professionals capable of promoting health and preventing disease through evidence-based dietary practices. The curriculum balances theory with clinical and community nutrition experience.",
     highlights: [

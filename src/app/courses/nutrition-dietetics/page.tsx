@@ -151,7 +151,7 @@ export default function NutritionCoursePage() {
             <div className="bg-green-50 rounded-2xl p-7">
               <h4 className="font-heading font-bold text-green-800 mb-4">Eligibility Criteria</h4>
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                Plus Two / VHSE with Biology as one of the papers
+                Plus Two / VHSE with Biology and chemistry as one of the papers
               </p>
               <ul className="space-y-2 text-sm text-gray-700 mb-4">
                 <li className="flex gap-2 items-start">

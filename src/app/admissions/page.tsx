@@ -185,7 +185,7 @@ export default function AdmissionsPage() {
               {
                 title: "B.Sc Artificial Intelligence",
                 color: "border-blue-400",
-                eligibility: "Plus Two with any Computer stream as Optional / Science.",
+                eligibility: "Plus Two with any Computer stream as Optional / Mathematics.",
                 duration: "4 Years (8 Semesters) — FYUGP",
                 icon: "🤖",
                 career: "AI Engineer, Data Scientist, ML Developer, Software Analyst",
@@ -193,7 +193,7 @@ export default function AdmissionsPage() {
               {
                 title: "B.Sc Home Science – Nutrition & Dietetics",
                 color: "border-green-400",
-                eligibility: "Plus Two / VHSE with Biology as one of the papers",
+                eligibility: "Plus Two / VHSE with Biology and chemistry as one of the papers",
                 duration: "4 Years (8 Semesters) — FYUGP",
                 icon: "🥗",
                 career: "Dietitian, Clinical Nutritionist, Public Health Nutritionist, Food Analyst",

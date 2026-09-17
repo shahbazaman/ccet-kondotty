@@ -119,7 +119,7 @@ export default function HotelManagementCoursePage() {
             { label: "Duration", value: "4 Years" },
             { label: "Semesters", value: "8" },
             { label: "Total Credits", value: "177" },
-            { label: "Eligibility", value: "B.Sc./B.T. or Plus Two" },
+            { label: "Eligibility", value: "Plus Two" },
           ].map((s, i) => (
             <Animate key={s.label} animation="zoom-in" delay={i * 80}>
               <div>
@@ -152,7 +152,7 @@ export default function HotelManagementCoursePage() {
             <div className="bg-amber-50 rounded-2xl p-7">
               <h4 className="font-heading font-bold text-amber-800 mb-4">Eligibility Criteria</h4>
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                <strong>B.Sc. / B.T. students</strong> who have passed the qualifying examination are eligible to apply.
+                Plus Two pass with any stream - Science/Humanities/Commerce.
               </p>
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
                 Also eligible: Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognised as equivalent thereto, with <strong>not less than 50%</strong>.

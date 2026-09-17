@@ -7,7 +7,7 @@ export const courses = [
     duration: "4 Years",
     intake: "24 Seats",
     affiliation: "University of Calicut",
-    eligibility: "Plus Two with Mathematics / Computer Science / Computer Application / IT / Informatics Practice or equivalent. (UO Note No. 107590/GA–IV–J1/2023/Admn, Dated: 11.05.2023)",
+    eligibility: "Plus Two with any Computer stream as Optional / Science.",
     description:
       "A cutting-edge undergraduate programme that equips students with the foundational and applied knowledge of Artificial Intelligence, Machine Learning, Deep Learning, Natural Language Processing and Data Science. Students gain hands-on experience through industry-aligned projects and internships.",
     highlights: [
@@ -41,7 +41,7 @@ export const courses = [
     duration: "4 Years",
     intake: "24 Seats",
     affiliation: "University of Calicut",
-    eligibility: "B.Sc Degree with Home Science / Family & Community Science / Dietetics / Clinical Nutrition / Nutrition & Dietetics / Food Science / related programme with minimum 50% aggregate marks. OBC/OEC: 5% relaxation. SC/ST: pass only.",
+    eligibility: "Plus Two / VHSE with Biology as one of the papers",
     description:
       "An applied science programme designed to develop competent nutrition and dietetics professionals capable of promoting health and preventing disease through evidence-based dietary practices. The curriculum balances theory with clinical and community nutrition experience.",
     highlights: [
@@ -75,7 +75,7 @@ export const courses = [
     duration: "4 Years",
     intake: "24 Seats",
     affiliation: "University of Calicut",
-    eligibility: "Plus Two (any stream) with minimum 50% marks. OBC/OEC: 5% concession. SC/ST: pass only. (U.O.No.GAI/J2/2907/2003)",
+    eligibility: "Plus Two pass with any stream - Science/Humanities/Commerce.",
     description:
       "A professional programme that prepares graduates for leadership roles in the global hospitality industry. Students are trained in hotel operations, food production, food & beverage service, front office management, and housekeeping across state-of-the-art training kitchens and mock hotel facilities.",
     highlights: [

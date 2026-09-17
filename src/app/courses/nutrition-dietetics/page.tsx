@@ -151,7 +151,7 @@ export default function NutritionCoursePage() {
             <div className="bg-green-50 rounded-2xl p-7">
               <h4 className="font-heading font-bold text-green-800 mb-4">Eligibility Criteria</h4>
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                B.Sc Degree with <strong>Home Science / Family & Community Science / Dietetics / Clinical Nutrition / Nutrition and Dietetics / Food Science with Quality Control / Food Science and Nutrition / Food Service Management and Dietetics</strong> or other Nutrition related degree programmes in Life Science subjects (undertaking required), and BVoc Nutrition Science and Dietetics of this University or an equivalent degree.
+                Plus Two / VHSE with Biology as one of the papers
               </p>
               <ul className="space-y-2 text-sm text-gray-700 mb-4">
                 <li className="flex gap-2 items-start">

@@ -151,7 +151,7 @@ export default function AICoursePage() {
             <div className="bg-blue-50 rounded-2xl p-7">
               <h4 className="font-heading font-bold text-primary mb-4">Eligibility Criteria</h4>
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                Candidates who have passed (Eligible for Higher Studies) the HSE of the Kerala State Board of Higher Secondary Examination or any other examination recognized as equivalent thereto with <strong>Mathematics / Computer Science / Computer Application / Information Technology / Informatics Practice / Informatics / Additional Mathematics</strong> are eligible for admission.
+                Plus Two with any Computer stream as Optional / Science.
               </p>
               <p className="text-xs text-gray-500 italic mb-4">
                 (UO Note No. 107590/GA – IV – J1/2023/Admn, Dated: 11.05.2023)
@@ -160,7 +160,7 @@ export default function AICoursePage() {
                 <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide mb-2">Index Mark Calculation</p>
                 <ul className="text-xs text-gray-600 space-y-1.5">
                   <li>• <strong>Science with Maths:</strong> Total Part III marks + marks secured for Mathematics</li>
-                  <li>• <strong>Other combinations:</strong> Total Part III marks + marks for Maths / Computer Science / Computer Application / IT / Informatics Practice / Informatics / Additional Mathematics</li>
+                  <li>• <span className="font-semibold">Other combinations:</span> Total Part III marks + marks for Maths / Computer Science / Computer Application / IT / Informatics Practice / Informatics / Additional Mathematics</li>
                   <li>• <strong>If both studied:</strong> Whichever subject mark is higher will be added</li>
                 </ul>
               </div>

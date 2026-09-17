@@ -185,7 +185,7 @@ export default function AdmissionsPage() {
               {
                 title: "B.Sc Artificial Intelligence",
                 color: "border-blue-400",
-                eligibility: "Plus Two (Science) with Mathematics / Computer Science. OR Plus Two (Commerce/Humanities) with any Computer Course.",
+                eligibility: "Plus Two with any Computer stream as Optional / Science.",
                 duration: "4 Years (8 Semesters) — FYUGP",
                 icon: "🤖",
                 career: "AI Engineer, Data Scientist, ML Developer, Software Analyst",
@@ -193,7 +193,7 @@ export default function AdmissionsPage() {
               {
                 title: "B.Sc Home Science – Nutrition & Dietetics",
                 color: "border-green-400",
-                eligibility: "B.Sc Degree with Home Science / Nutrition & Dietetics / related degree. Minimum 50% aggregate. OBC/OEC: 5% relaxation. SC/ST: pass only.",
+                eligibility: "Plus Two / VHSE with Biology as one of the papers",
                 duration: "4 Years (8 Semesters) — FYUGP",
                 icon: "🥗",
                 career: "Dietitian, Clinical Nutritionist, Public Health Nutritionist, Food Analyst",
@@ -201,7 +201,7 @@ export default function AdmissionsPage() {
               {
                 title: "B.Sc Hotel Management & Catering Science Honours",
                 color: "border-amber-400",
-                eligibility: "Plus Two (any stream) with minimum 50%. OBC/OEC: 5% relaxation. SC/ST: pass only.",
+                eligibility: "Plus Two pass with any stream - Science/Humanities/Commerce.",
                 duration: "4 Years (8 Semesters) — FYUGP",
                 icon: "🏨",
                 career: "Hotel Manager, Chef, Food & Beverage Manager, Hospitality Consultant",
